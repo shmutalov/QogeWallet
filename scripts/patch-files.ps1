@@ -3,8 +3,8 @@ $p1 = "../node_modules/react-native-tor/android/gradle.properties"
 $p1c = Get-Content $p1
 $p1c.replace('1.3.50', '1.6.0') | Set-Content $p1
 
-# patch rn-lnd
-$p2 = "../node_modules/react-native-camera-kit/android/src/main/java/com/rncamerakit/CKCamera.kt"
+# patch rn-ldk
+$p2 = "../node_modules/rn-ldk/android/gradle.properties"
 $p2c = Get-Content $p2
 $p2c.replace('1.3.50', '1.6.0') | Set-Content $p2
 
