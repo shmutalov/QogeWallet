@@ -40,6 +40,9 @@ import Privacy from './blue_modules/Privacy';
 const A = require('./blue_modules/analytics');
 const currency = require('./blue_modules/currency');
 
+// disable exchange rate lookup
+currency._setSkipUpdateExchangeRate();
+
 const eventEmitter = Platform.OS === 'ios' ? new NativeEventEmitter(NativeModules.EventEmitter) : undefined;
 const { EventEmitter } = NativeModules;
 
