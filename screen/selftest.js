@@ -21,6 +21,9 @@ const bitcoin = require('bitcoinjs-lib');
 const BlueCrypto = require('react-native-blue-crypto');
 const encryption = require('../blue_modules/encryption');
 const BlueElectrum = require('../blue_modules/BlueElectrum');
+
+import QogecoinNetworks from '../qogecoin-lib/qogecoin-network';
+
 const bip32 = BIP32Factory(ecc);
 
 const styles = StyleSheet.create({
@@ -163,9 +166,9 @@ export default class Selftest extends Component {
       const address = bitcoin.payments.p2sh({
         redeem: bitcoin.payments.p2wpkh({
           pubkey: child.publicKey,
-          network: bitcoin.networks.bitcoin,
+          network: QogecoinNetworks.mainnet,
         }),
-        network: bitcoin.networks.bitcoin,
+        network: QogecoinNetworks.mainnet,
       }).address;
 
       if (address !== '3GcKN7q7gZuZ8eHygAhHrvPa5zZbG5Q1rK') {

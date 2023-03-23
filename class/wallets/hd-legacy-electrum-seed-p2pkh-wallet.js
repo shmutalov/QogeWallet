@@ -4,6 +4,9 @@ import * as ecc from 'tiny-secp256k1';
 
 const bitcoin = require('bitcoinjs-lib');
 const mn = require('electrum-mnemonic');
+
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 const bip32 = BIP32Factory(ecc);
 
 const PREFIX = mn.PREFIXES.standard;
@@ -44,6 +47,7 @@ export class HDLegacyElectrumSeedP2PKHWallet extends HDLegacyP2PKHWallet {
 
     const node = bip32.fromBase58(this.getXpub());
     const address = bitcoin.payments.p2pkh({
+      network: QogecoinNetworks.mainnet,
       pubkey: node.derive(1).derive(index).publicKey,
     }).address;
 
@@ -56,6 +60,7 @@ export class HDLegacyElectrumSeedP2PKHWallet extends HDLegacyP2PKHWallet {
 
     const node = bip32.fromBase58(this.getXpub());
     const address = bitcoin.payments.p2pkh({
+      network: QogecoinNetworks.mainnet,
       pubkey: node.derive(0).derive(index).publicKey,
     }).address;
 

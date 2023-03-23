@@ -4,6 +4,8 @@ const ecc = require('tiny-secp256k1');
 const ECPair = ECPairFactory(ecc);
 const bitcoin = require('bitcoinjs-lib');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 /**
  * Creates Segwit P2SH Bitcoin address
  * @param pubkey
@@ -11,7 +13,7 @@ const bitcoin = require('bitcoinjs-lib');
  * @returns {String}
  */
 function pubkeyToP2shSegwitAddress(pubkey, network) {
-  network = network || bitcoin.networks.bitcoin;
+  network = network || QogecoinNetworks.mainnet;
   const { address } = bitcoin.payments.p2sh({
     redeem: bitcoin.payments.p2wpkh({ pubkey, network }),
     network,
@@ -44,7 +46,7 @@ export class SegwitP2SHWallet extends LegacyWallet {
       const scriptPubKey2 = Buffer.from(scriptPubKey, 'hex');
       return bitcoin.payments.p2sh({
         output: scriptPubKey2,
-        network: bitcoin.networks.bitcoin,
+        network: QogecoinNetworks.mainnet,
       }).address;
     } catch (_) {
       return false;
@@ -103,8 +105,8 @@ export class SegwitP2SHWallet extends LegacyWallet {
       c++;
 
       const pubkey = keyPair.publicKey;
-      const p2wpkh = bitcoin.payments.p2wpkh({ pubkey });
-      const p2sh = bitcoin.payments.p2sh({ redeem: p2wpkh });
+      const p2wpkh = bitcoin.payments.p2wpkh({ network: QogecoinNetworks.mainnet, pubkey });
+      const p2sh = bitcoin.payments.p2sh({ network: QogecoinNetworks.mainnet, redeem: p2wpkh });
 
       psbt.addInput({
         hash: input.txid,

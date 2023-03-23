@@ -7,6 +7,8 @@ const bitcoin = require('bitcoinjs-lib');
 const { CipherSeed } = require('aezeed');
 const bip32 = BIP32Factory(ecc);
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 /**
  * AEZEED mnemonics support, which is used in LND
  * Support only BIP84 (native segwit) derivations
@@ -104,6 +106,7 @@ export class HDAezeedWallet extends AbstractHDElectrumWallet {
     this._node1 = this._node1 || this._getNode1(); // cache
 
     const address = bitcoin.payments.p2wpkh({
+      network: QogecoinNetworks.mainnet,
       pubkey: this._node1.derive(index).publicKey,
     }).address;
 
@@ -117,6 +120,7 @@ export class HDAezeedWallet extends AbstractHDElectrumWallet {
     this._node0 = this._node0 || this._getNode0(); // cache
 
     const address = bitcoin.payments.p2wpkh({
+      network: QogecoinNetworks.mainnet,
       pubkey: this._node0.derive(index).publicKey,
     }).address;
 

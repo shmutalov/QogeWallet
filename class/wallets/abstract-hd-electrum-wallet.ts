@@ -16,6 +16,8 @@ import { ECPairInterface } from 'ecpair/src/ecpair';
 import { Psbt, Transaction as BTransaction } from 'bitcoinjs-lib';
 import { CoinSelectReturnInput, CoinSelectTarget } from 'coinselect';
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 const ECPair = ECPairFactory(ecc);
 const bitcoin = require('bitcoinjs-lib');
 const BlueElectrum: typeof BlueElectrumNs = require('../../blue_modules/BlueElectrum');
@@ -1250,7 +1252,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
     if (!pubkey || !path) {
       throw new Error('Internal error: pubkey or path are invalid');
     }
-    const p2wpkh = bitcoin.payments.p2wpkh({ pubkey });
+    const p2wpkh = bitcoin.payments.p2wpkh({ network: QogecoinNetworks.mainnet, pubkey });
 
     psbt.addInput({
       // @ts-ignore
@@ -1302,12 +1304,14 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
    */
   _nodeToBech32SegwitAddress(hdNode: BIP32Interface): string {
     return bitcoin.payments.p2wpkh({
+      network: QogecoinNetworks.mainnet,
       pubkey: hdNode.publicKey,
     }).address;
   }
 
   _nodeToLegacyAddress(hdNode: BIP32Interface): string {
     return bitcoin.payments.p2pkh({
+      network: QogecoinNetworks.mainnet,
       pubkey: hdNode.publicKey,
     }).address;
   }
@@ -1317,7 +1321,8 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
    */
   _nodeToP2shSegwitAddress(hdNode: BIP32Interface): string {
     const { address } = bitcoin.payments.p2sh({
-      redeem: bitcoin.payments.p2wpkh({ pubkey: hdNode.publicKey }),
+      network: QogecoinNetworks.mainnet,
+      redeem: bitcoin.payments.p2wpkh({ network: QogecoinNetworks.mainnet, pubkey: hdNode.publicKey }),
     });
     return address;
   }

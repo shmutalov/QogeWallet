@@ -5,6 +5,8 @@ import * as ecc from 'tiny-secp256k1';
 const bip32 = BIP32Factory(ecc);
 const bitcoin = require('bitcoinjs-lib');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 /**
  * HD Wallet (BIP39).
  * In particular, BIP49 (P2SH Segwit)
@@ -74,8 +76,8 @@ export class HDSegwitP2SHWallet extends AbstractHDElectrumWallet {
   _addPsbtInput(psbt, input, sequence, masterFingerprintBuffer) {
     const pubkey = this._getPubkeyByAddress(input.address);
     const path = this._getDerivationPathByAddress(input.address);
-    const p2wpkh = bitcoin.payments.p2wpkh({ pubkey });
-    const p2sh = bitcoin.payments.p2sh({ redeem: p2wpkh });
+    const p2wpkh = bitcoin.payments.p2wpkh({ network: QogecoinNetworks.mainnet, pubkey });
+    const p2sh = bitcoin.payments.p2sh({ network: QogecoinNetworks.mainnet, redeem: p2wpkh });
 
     psbt.addInput({
       hash: input.txid,

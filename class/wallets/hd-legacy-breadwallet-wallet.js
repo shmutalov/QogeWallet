@@ -7,6 +7,8 @@ import * as ecc from 'tiny-secp256k1';
 const BlueElectrum = require('../../blue_modules/BlueElectrum');
 const bip32 = BIP32Factory(ecc);
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 /**
  * HD Wallet (BIP39).
  * In particular, Breadwallet-compatible (Legacy addresses)
@@ -30,7 +32,8 @@ export class HDLegacyBreadwalletWallet extends HDLegacyP2PKHWallet {
       _node = this._node1 || (this._node1 = bip32.fromBase58(this.getXpub()).derive(node));
     }
     const pubkey = _node.derive(index).publicKey;
-    const address = p2wpkh ? bitcoinjs.payments.p2wpkh({ pubkey }).address : bitcoinjs.payments.p2pkh({ pubkey }).address;
+    const network = QogecoinNetworks.mainnet;
+    const address = p2wpkh ? bitcoinjs.payments.p2wpkh({ network, pubkey }).address : bitcoinjs.payments.p2pkh({ network, pubkey }).address;
     return address;
   }
 

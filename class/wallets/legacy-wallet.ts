@@ -13,6 +13,8 @@ import { ECPairAPI, ECPairFactory, Signer } from 'ecpair';
 const ecc = require('tiny-secp256k1');
 const ECPair: ECPairAPI = ECPairFactory(ecc);
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 /**
  *  Has private key and single address like "1ABCD....."
  *  (legacy P2PKH compressed)
@@ -82,6 +84,7 @@ export class LegacyWallet extends AbstractWallet {
     try {
       const keyPair = ECPair.fromWIF(this.secret);
       address = bitcoin.payments.p2pkh({
+        network: QogecoinNetworks.mainnet,
         pubkey: keyPair.publicKey,
       }).address;
     } catch (err) {
@@ -527,7 +530,7 @@ export class LegacyWallet extends AbstractWallet {
       return (
         bitcoin.payments.p2pkh({
           output: scriptPubKey2,
-          network: bitcoin.networks.bitcoin,
+          network: QogecoinNetworks.mainnet,
         }).address ?? false
       );
     } catch (_) {

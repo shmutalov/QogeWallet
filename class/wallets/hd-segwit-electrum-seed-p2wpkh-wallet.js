@@ -7,6 +7,8 @@ const bitcoin = require('bitcoinjs-lib');
 const mn = require('electrum-mnemonic');
 const bip32 = BIP32Factory(ecc);
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 const PREFIX = mn.PREFIXES.segwit;
 
 /**
@@ -53,6 +55,7 @@ export class HDSegwitElectrumSeedP2WPKHWallet extends HDSegwitBech32Wallet {
     const xpub = this._zpubToXpub(this.getXpub());
     const node = bip32.fromBase58(xpub);
     const address = bitcoin.payments.p2wpkh({
+      network: QogecoinNetworks.mainnet,
       pubkey: node.derive(1).derive(index).publicKey,
     }).address;
 
@@ -66,6 +69,7 @@ export class HDSegwitElectrumSeedP2WPKHWallet extends HDSegwitBech32Wallet {
     const xpub = this._zpubToXpub(this.getXpub());
     const node = bip32.fromBase58(xpub);
     const address = bitcoin.payments.p2wpkh({
+      network: QogecoinNetworks.mainnet,
       pubkey: node.derive(0).derive(index).publicKey,
     }).address;
 

@@ -277,21 +277,25 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
 
     if (this.isWrappedSegwit()) {
       const { address } = bitcoin.payments.p2sh({
+        network: QogecoinNetworks.mainnet,
         redeem: bitcoin.payments.p2wsh({
-          redeem: bitcoin.payments.p2ms({ m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
+          network: QogecoinNetworks.mainnet,
+          redeem: bitcoin.payments.p2ms({ network: QogecoinNetworks.mainnet, m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
         }),
       });
 
       return address;
     } else if (this.isNativeSegwit()) {
       const { address } = bitcoin.payments.p2wsh({
-        redeem: bitcoin.payments.p2ms({ m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
+        network: QogecoinNetworks.mainnet,
+        redeem: bitcoin.payments.p2ms({ network: QogecoinNetworks.mainnet, m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
       });
 
       return address;
     } else if (this.isLegacy()) {
       const { address } = bitcoin.payments.p2sh({
-        redeem: bitcoin.payments.p2ms({ m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
+        network: QogecoinNetworks.mainnet,
+        redeem: bitcoin.payments.p2ms({ network: QogecoinNetworks.mainnet, m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
       });
 
       return address;
@@ -684,7 +688,8 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
 
     if (this.isNativeSegwit()) {
       const p2wsh = bitcoin.payments.p2wsh({
-        redeem: bitcoin.payments.p2ms({ m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
+        network: QogecoinNetworks.mainnet,
+        redeem: bitcoin.payments.p2ms({ network: QogecoinNetworks.mainnet, m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
       });
       const witnessScript = p2wsh.redeem.output;
 
@@ -706,8 +711,10 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
       });
     } else if (this.isWrappedSegwit()) {
       const p2shP2wsh = bitcoin.payments.p2sh({
+        network: QogecoinNetworks.mainnet,
         redeem: bitcoin.payments.p2wsh({
-          redeem: bitcoin.payments.p2ms({ m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
+          network: QogecoinNetworks.mainnet,
+          redeem: bitcoin.payments.p2ms({ network: QogecoinNetworks.mainnet, m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
         }),
       });
       const witnessScript = p2shP2wsh.redeem.redeem.output;
@@ -730,7 +737,8 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
       });
     } else if (this.isLegacy()) {
       const p2sh = bitcoin.payments.p2sh({
-        redeem: bitcoin.payments.p2ms({ m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
+        network: QogecoinNetworks.mainnet,
+        redeem: bitcoin.payments.p2ms({ network: QogecoinNetworks.mainnet, m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
       });
       const redeemScript = p2sh.redeem.output;
       psbt.addInput({
@@ -778,12 +786,14 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
     outputData.bip32Derivation = bip32Derivation;
 
     if (this.isLegacy()) {
-      const p2sh = bitcoin.payments.p2ms({ m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) });
+      const p2sh = bitcoin.payments.p2ms({ network: QogecoinNetworks.mainnet, m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) });
       outputData.redeemScript = p2sh.output;
     } else if (this.isWrappedSegwit()) {
       const p2shP2wsh = bitcoin.payments.p2sh({
+        network: QogecoinNetworks.mainnet,
         redeem: bitcoin.payments.p2wsh({
-          redeem: bitcoin.payments.p2ms({ m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
+          network: QogecoinNetworks.mainnet,
+          redeem: bitcoin.payments.p2ms({ network: QogecoinNetworks.mainnet, m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
         }),
       });
       outputData.witnessScript = p2shP2wsh.redeem.redeem.output;
@@ -791,7 +801,8 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
     } else if (this.isNativeSegwit()) {
       // not needed by coldcard, apparently..?
       const p2wsh = bitcoin.payments.p2wsh({
-        redeem: bitcoin.payments.p2ms({ m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
+        network: QogecoinNetworks.mainnet,
+        redeem: bitcoin.payments.p2ms({ network: QogecoinNetworks.mainnet, m: this._m, pubkeys: MultisigHDWallet.sortBuffers(pubkeys) }),
       });
       outputData.witnessScript = p2wsh.redeem.output;
     } else {
