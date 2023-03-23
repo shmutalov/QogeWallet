@@ -1155,7 +1155,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
     const { inputs, outputs, fee } = this.coinselect(utxos, targets, feeRate, changeAddress);
 
     sequence = sequence || AbstractHDElectrumWallet.defaultRBFSequence;
-    let psbt = new bitcoin.Psbt();
+    let psbt = new bitcoin.Psbt({network: QogecoinNetworks.mainnet});
     let c = 0;
     const keypairs: Record<number, ECPairInterface> = {};
     const values: Record<number, number> = {};
@@ -1284,8 +1284,9 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
    * @returns {Transaction}
    */
   combinePsbt(base64one: string | Psbt, base64two: string | Psbt) {
-    const final1 = typeof base64one === 'string' ? bitcoin.Psbt.fromBase64(base64one) : base64one;
-    const final2 = typeof base64two === 'string' ? bitcoin.Psbt.fromBase64(base64two) : base64two;
+    const network = QogecoinNetworks.mainnet;
+    const final1 = typeof base64one === 'string' ? bitcoin.Psbt.fromBase64(base64one, {network}) : base64one;
+    const final2 = typeof base64two === 'string' ? bitcoin.Psbt.fromBase64(base64two, {network}) : base64two;
     final1.combine(final2);
 
     let extractedTransaction;

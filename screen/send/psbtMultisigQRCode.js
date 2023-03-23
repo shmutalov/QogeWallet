@@ -13,6 +13,8 @@ import alert from '../../components/Alert';
 const bitcoin = require('bitcoinjs-lib');
 const fs = require('../../blue_modules/fs');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 const isDesktop = getSystemName() === 'Mac OS X';
 
 const PsbtMultisigQRCode = () => {
@@ -24,7 +26,7 @@ const PsbtMultisigQRCode = () => {
   const dynamicQRCode = useRef();
   const isFocused = useIsFocused();
 
-  const psbt = bitcoin.Psbt.fromBase64(psbtBase64);
+  const psbt = bitcoin.Psbt.fromBase64(psbtBase64, {network: QogecoinNetworks.mainnet});
   const stylesHook = StyleSheet.create({
     root: {
       backgroundColor: colors.elevated,

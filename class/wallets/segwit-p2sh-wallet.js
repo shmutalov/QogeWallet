@@ -91,7 +91,7 @@ export class SegwitP2SHWallet extends LegacyWallet {
     }
     const { inputs, outputs, fee } = this.coinselect(utxos, targets, feeRate, changeAddress);
     sequence = sequence || 0xffffffff; // disable RBF by default
-    const psbt = new bitcoin.Psbt();
+    const psbt = new bitcoin.Psbt({network: QogecoinNetworks.mainnet});
     let c = 0;
     const values = {};
     let keyPair;

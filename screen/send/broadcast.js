@@ -24,6 +24,8 @@ import Notifications from '../../blue_modules/notifications';
 
 const scanqr = require('../../helpers/scan-qr');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 const BROADCAST_RESULT = Object.freeze({
   none: 'Input transaction hex',
   pending: 'pending',
@@ -86,7 +88,7 @@ const Broadcast = () => {
 
     try {
       // sould be base64 encoded PSBT
-      const tx = bitcoin.Psbt.fromBase64(scannedData).extractTransaction();
+      const tx = bitcoin.Psbt.fromBase64(scannedData, {network: QogecoinNetworks.mainnet}).extractTransaction();
       return handleUpdateTxHex(tx.toHex());
     } catch (e) {}
   };

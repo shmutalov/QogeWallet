@@ -13,6 +13,8 @@ const bitcoin = require('bitcoinjs-lib');
 const BigNumber = require('bignumber.js');
 const currency = require('../../blue_modules/currency');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 const shortenAddress = addr => {
   return addr.substr(0, Math.floor(addr.length / 2) - 1) + '\n' + addr.substr(Math.floor(addr.length / 2) - 1, addr.length);
 };
@@ -25,7 +27,7 @@ const PsbtMultisig = () => {
   const { walletID, psbtBase64, memo, receivedPSBTBase64, launchedBy } = useRoute().params;
   /** @type MultisigHDWallet */
   const wallet = wallets.find(w => w.getID() === walletID);
-  const [psbt, setPsbt] = useState(bitcoin.Psbt.fromBase64(psbtBase64));
+  const [psbt, setPsbt] = useState(bitcoin.Psbt.fromBase64(psbtBase64, {network: QogecoinNetworks.mainnet}));
   const data = new Array(wallet.getM());
   const stylesHook = StyleSheet.create({
     root: {
@@ -152,7 +154,7 @@ const PsbtMultisig = () => {
 
   const _combinePSBT = () => {
     try {
-      const receivedPSBT = bitcoin.Psbt.fromBase64(receivedPSBTBase64);
+      const receivedPSBT = bitcoin.Psbt.fromBase64(receivedPSBTBase64, {network: QogecoinNetworks.mainnet});
       const newPsbt = psbt.combine(receivedPSBT);
       setPsbt(newPsbt);
     } catch (error) {

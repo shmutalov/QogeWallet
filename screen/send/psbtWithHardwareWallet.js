@@ -18,6 +18,8 @@ const BlueElectrum = require('../../blue_modules/BlueElectrum');
 const bitcoin = require('bitcoinjs-lib');
 const fs = require('../../blue_modules/fs');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 const PsbtWithHardwareWallet = () => {
   const { txMetadata, fetchAndSaveWalletTransactions, isElectrumDisabled } = useContext(BlueStorageContext);
   const navigation = useNavigation();
@@ -98,7 +100,7 @@ const PsbtWithHardwareWallet = () => {
     }
 
     if (deepLinkPSBT) {
-      const psbt = bitcoin.Psbt.fromBase64(deepLinkPSBT);
+      const psbt = bitcoin.Psbt.fromBase64(deepLinkPSBT, {network: QogecoinNetworks.mainnet});
       try {
         const Tx = fromWallet.combinePsbt(routeParamsPSBT.current, psbt);
         setTxHex(Tx.toHex());

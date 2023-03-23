@@ -251,7 +251,7 @@ const ScanQRCode = () => {
     // is it base43? stupid electrum desktop
     try {
       const hex = Base43.decode(ret.data);
-      bitcoin.Psbt.fromHex(hex); // if it doesnt throw - all good
+      bitcoin.Psbt.fromHex(hex, {network: QogecoinNetworks.mainnet}); // if it doesnt throw - all good
 
       if (launchedBy) {
         navigation.navigate(launchedBy);
