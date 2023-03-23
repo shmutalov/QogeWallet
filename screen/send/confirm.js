@@ -22,6 +22,8 @@ const Bignumber = require('bignumber.js');
 const bitcoin = require('bitcoinjs-lib');
 const torrific = require('../../blue_modules/torrific');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 const Confirm = () => {
   const { wallets, fetchAndSaveWalletTransactions, isElectrumDisabled, isTorDisabled } = useContext(BlueStorageContext);
   const [isBiometricUseCapableAndEnabled, setIsBiometricUseCapableAndEnabled] = useState(false);
@@ -107,7 +109,7 @@ const Confirm = () => {
    * @return {string}
    */
   const getPaymentScript = () => {
-    return bitcoin.address.toOutputScript(recipients[0].address);
+    return bitcoin.address.toOutputScript(recipients[0].address, QogecoinNetworks.mainnet);
   };
 
   const send = async () => {

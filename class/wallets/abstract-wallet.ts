@@ -213,7 +213,7 @@ export class AbstractWallet {
   setSecret(newSecret: string): this {
     this.secret = newSecret.trim().replace('bitcoin:', '').replace('BITCOIN:', '');
 
-    if (this.secret.startsWith('BC1')) this.secret = this.secret.toLowerCase();
+    if (this.secret.startsWith('BQ1')) this.secret = this.secret.toLowerCase();
 
     // [fingerprint/derivation]zpub
     const re = /\[([^\]]+)\](.*)/;

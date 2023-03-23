@@ -8,6 +8,8 @@ import * as ecc from 'tiny-secp256k1';
 const bitcoin = require('bitcoinjs-lib');
 const bip32 = BIP32Factory(ecc);
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 export class WatchOnlyWallet extends LegacyWallet {
   static type = 'watchOnly';
   static typeReadable = 'Watch-only';
@@ -54,7 +56,7 @@ export class WatchOnlyWallet extends LegacyWallet {
     if (this.secret.startsWith('xpub') || this.secret.startsWith('ypub') || this.secret.startsWith('zpub')) return this.isXpubValid();
 
     try {
-      bitcoin.address.toOutputScript(this.getAddress());
+      bitcoin.address.toOutputScript(this.getAddress(), QogecoinNetworks.mainnet);
       return true;
     } catch (_) {
       return false;
@@ -230,7 +232,7 @@ export class WatchOnlyWallet extends LegacyWallet {
       throw new Error('Not initialized');
     }
 
-    if (address && address.startsWith('BC1')) address = address.toLowerCase();
+    if (address && address.startsWith('BQ1')) address = address.toLowerCase();
 
     return this.getAddress() === address;
   }

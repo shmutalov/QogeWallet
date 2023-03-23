@@ -8,6 +8,8 @@ import Azteco from './azteco';
 const bitcoin = require('bitcoinjs-lib');
 const bip21 = require('bip21');
 
+import QogecoinNetworks from '../qogecoin-lib/qogecoin-network'
+
 class DeeplinkSchemaMatch {
   static hasSchema(schemaString) {
     if (typeof schemaString !== 'string' || schemaString.length <= 0) return false;
@@ -347,7 +349,7 @@ class DeeplinkSchemaMatch {
     address = address.replace('://', ':').replace('bitcoin:', '').replace('BITCOIN:', '').replace('bitcoin=', '').split('?')[0];
     let isValidBitcoinAddress = false;
     try {
-      bitcoin.address.toOutputScript(address);
+      bitcoin.address.toOutputScript(address, QogecoinNetworks.mainnet);
       isValidBitcoinAddress = true;
     } catch (err) {
       isValidBitcoinAddress = false;

@@ -11,6 +11,8 @@ import { SegwitBech32Wallet } from './segwit-bech32-wallet';
 import alert from '../../components/Alert';
 const bitcoin = require('bitcoinjs-lib');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 export class LightningLdkWallet extends LightningCustodianWallet {
   static type = 'lightningLdk';
   static typeReadable = 'Lightning LDK';
@@ -650,7 +652,7 @@ export class LightningLdkWallet extends LightningCustodianWallet {
   }
 
   async setRefundAddress(address: string) {
-    const script = bitcoin.address.toOutputScript(address);
+    const script = bitcoin.address.toOutputScript(address, QogecoinNetworks.mainnet);
     this._refundAddressScriptHex = script.toString('hex');
     await RnLdk.setRefundAddressScript(this._refundAddressScriptHex);
   }

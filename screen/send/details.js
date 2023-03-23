@@ -422,7 +422,7 @@ const SendDetails = () => {
     }
 
     console.log('options', options);
-    if (btcAddressRx.test(address) || address.startsWith('bc1') || address.startsWith('BC1')) {
+    if (btcAddressRx.test(address) || address.startsWith('bq1') || address.startsWith('BQ1')) {
       setAddresses(addresses => {
         addresses[scrollIndex.current].address = address;
         addresses[scrollIndex.current].amount = options.amount;
