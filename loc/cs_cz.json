@@ -153,7 +153,7 @@
     "details_create": "Vytvořit fakturu",
     "details_error_decode": "Bitcoinovou adresu nelze dekódovat",
     "details_fee_field_is_not_valid": "Poplatek není správně vyplněn",
-    "details_frozen": "{amount} BTC je zmraženo ",
+    "details_frozen": "{amount} QOGE je zmraženo ",
     "details_next": "Další",
     "details_no_signed_tx": "Vybraný soubor neobsahuje transakci, kterou lze importovat.",
     "details_note_placeholder": "Poznámka pro sebe",
@@ -469,7 +469,7 @@
     "vault_key": "Klíč úložiště {number}",
     "required_keys_out_of_total": "Požadované klíče z celkového počtu",
     "fee": "Poplatek: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Potvrdit",
     "header": "Odeslat",
     "share": "Sdílet",
@@ -554,7 +554,7 @@
     "tip": "Umožňuje zobrazit, označit, zmrazit nebo vybrat mince pro lepší správu peněženky. Klepnutím na barevné kruhy můžete vybrat více mincí."
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Max",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

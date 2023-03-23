@@ -153,7 +153,7 @@
     "details_create": "Stwórz fakturę",
     "details_error_decode": "Nie można zdekodować adresu Bitcoin",
     "details_fee_field_is_not_valid": "Błędnie wypełnione pole z opłatą",
-    "details_frozen": "{amount} BTC jest zamrożona",
+    "details_frozen": "{amount} QOGE jest zamrożona",
     "details_next": "Dalej",
     "details_no_signed_tx": "Wskazany plik nie zawiera transakcji, która może zostać zaimportowana.",
     "details_note_placeholder": "Własny opis transakcji",
@@ -469,7 +469,7 @@
     "vault_key": "Klucz Skarbca {number}",
     "required_keys_out_of_total": "Wymagane klucze spośród wszystkich",
     "fee": "Opłata: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Potwierdź",
     "header": "Wyślij",
     "share": "Udostępnij",
@@ -554,7 +554,7 @@
     "tip": "Dzięki tej funkcji możesz lepiej zarządzać monetami poprzez ich wybieranie, zamrażanie lub sprawdzanie i nadawanie im etykiet. Możesz zaznaczyć kilka monet naraz wybierając kolorowe kółka."
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Max",
     "sat_vbyte": "sat/vBajt",
     "sats": "satoshi"

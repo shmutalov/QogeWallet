@@ -153,7 +153,7 @@
     "details_create": "Opprett Faktura",
     "details_error_decode": "Kan ikke dekode Bitcoin-adressen",
     "details_fee_field_is_not_valid": "Avgiftsfeltet er ikke gyldig",
-    "details_frozen": "{amount} BTC er frosset",
+    "details_frozen": "{amount} QOGE er frosset",
     "details_next": "Neste",
     "details_no_signed_tx": "Den valgte filen inneholder ikke en transaksjon som kan importeres.",
     "details_note_placeholder": "Notat til meg selv",
@@ -464,7 +464,7 @@
     "vault_key": "Vault-nøkkel {number}",
     "required_keys_out_of_total": "Nødvendige nøkler av totalen",
     "fee": "Avgift: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Bekreft",
     "header": "Send",
     "share": "Del",
@@ -549,7 +549,7 @@
     "tip": "Denne funksjonen lar deg se, merke, fryse eller velge mynter for forbedret lommebokadministrasjon. Du kan velge flere mynter ved å trykke på de fargede sirklene."
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Maks",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

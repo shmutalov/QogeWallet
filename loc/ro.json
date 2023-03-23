@@ -433,7 +433,7 @@
     "vault_key": "Cheie seif {number}",
     "required_keys_out_of_total": "Chei necesare din total",
     "fee": "Comision: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Confirmă",
     "header": "Trimite",
     "share": "Distribuie",
@@ -515,7 +515,7 @@
     "tip": "Această funcționalitate îți permite să vezi, etichetezi, îngheți sau selectezi monedele pentru o administrare îmbunătățită a portofelului. Poți selecta monede multiple apăsînd cercurile colorate. "
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Max",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

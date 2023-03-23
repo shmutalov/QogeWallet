@@ -153,7 +153,7 @@
     "details_create": "Crear factura",
     "details_error_decode": "No se ha podido decodificar la dirección de Bitcoin",
     "details_fee_field_is_not_valid": "La comisión introducida no es válida",
-    "details_frozen": "{amount} de BTC está congelado",
+    "details_frozen": "{amount} de QOGE está congelado",
     "details_next": "Siguiente",
     "details_no_signed_tx": "El archivo seleccionado no contiene una transacción que se pueda importar.",
     "details_note_placeholder": "Nota personal",
@@ -466,7 +466,7 @@
     "vault_key": "Clave de la Vault {number}",
     "required_keys_out_of_total": "Las llaves que se necesitarán del total de llaves creadas",
     "fee": "Tarifa: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Confirmar",
     "header": "Enviar",
     "share": "Compartir",
@@ -551,7 +551,7 @@
     "tip": "Te permite ver, etiquetar, congelar o seleccionar monedas para mejorar la organización de las carteras."
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Máx",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

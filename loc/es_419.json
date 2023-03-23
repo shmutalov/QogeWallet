@@ -153,7 +153,7 @@
     "details_create": "Crear Factura",
     "details_error_decode": "No se puede decodificar la dirección de Bitcoin",
     "details_fee_field_is_not_valid": "La tasa no es válida.",
-    "details_frozen": "{amount} BTC está congelado",
+    "details_frozen": "{amount} QOGE está congelado",
     "details_next": "Siguiente",
     "details_no_signed_tx": "El archivo seleccionado no contiene una transacción que se pueda importar.",
     "details_note_placeholder": "Nota personal",
@@ -469,7 +469,7 @@
     "vault_key": "Clave de la Bóveda {number}",
     "required_keys_out_of_total": "Llaves requeridas del total",
     "fee": "Tarifa: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Confirmar",
     "header": "Enviar",
     "share": "Compartir",
@@ -554,7 +554,7 @@
     "tip": "Esta función te permite ver, etiquetar, congelar o seleccionar monedas para una mejor gestión de la cartera. Puedes seleccionar varias monedas tocando los círculos de colores."
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Máx",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

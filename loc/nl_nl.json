@@ -450,7 +450,7 @@
     "vault_key": "Kluissleutel {number}",
     "required_keys_out_of_total": "Vereiste sleutels uit het totaal",
     "fee": "Fee: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Bevestig",
     "header": "Verzenden",
     "share": "Delen",
@@ -534,7 +534,7 @@
     "tip": "Hiermee kunt u coins zien, labelen, bevriezen of selecteren voor verbeterd walletbeheer."
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "MAX",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

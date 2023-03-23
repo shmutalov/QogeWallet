@@ -134,7 +134,7 @@
     "details_amount_field_is_less_than_minimum_amount_sat": "La quantitat especificada és massa petita. Introduïu una quantitat superior a 500 sats.",
     "details_create": "Crear",
     "details_fee_field_is_not_valid": "Comissió invalida",
-    "details_frozen": "{amount} BTC està bloquejat",
+    "details_frozen": "{amount} QOGE està bloquejat",
     "details_next": "Següent",
     "details_note_placeholder": "comentari (útil per tu)",
     "details_scan": "Escanejar",
@@ -308,7 +308,7 @@
   },
   "multisig": {
     "multisig_vault": "Bóveda",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Confirmar",
     "header": "Enviar",
     "share": "Compartir",

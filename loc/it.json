@@ -422,7 +422,7 @@
     "multisig_vault_explain": "La miglior sicurezza per grossi importi",
     "required_keys_out_of_total": "Chiavi richieste sul totale",
     "fee": "Commissione: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Conferma",
     "header": "Invia",
     "share": "Condividi",
@@ -455,7 +455,7 @@
     "freezeLabel_un": "Scongela"
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Max",
     "sat_vbyte": "sat/vByte",
     "sats": "sat"

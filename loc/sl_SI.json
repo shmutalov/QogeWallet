@@ -152,7 +152,7 @@
     "details_create": "Ustvari Račun",
     "details_error_decode": "Ni mogoče dekodirati Bitcoin naslova",
     "details_fee_field_is_not_valid": "Omrežnina ni veljavna",
-    "details_frozen": "{amount} BTC zamrznjeno",
+    "details_frozen": "{amount} QOGE zamrznjeno",
     "details_next": "Naprej",
     "details_no_signed_tx": "Izbrana datoteka ne vsebuje transakcije, ki jo je mogoče uvoziti.",
     "details_note_placeholder": "lastna opomba",
@@ -464,7 +464,7 @@
     "vault_key": "Ključ trezorja {number}",
     "required_keys_out_of_total": "Zahtevani ključi od vseh",
     "fee": "Omrežnina: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Potrditev",
     "header": "Pošlji",
     "share": "Deli",
@@ -549,7 +549,7 @@
     "tip": "Omogoča ogled, označevanje, zamrznitev ali izbiro kovancev za boljše upravljanje denarnice."
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "MAX",
     "sat_vbyte": "sat/vBajt",
     "sats": "sats"

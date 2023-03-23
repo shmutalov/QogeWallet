@@ -452,7 +452,7 @@
     "vault_key": "Trezor kulcs {number}",
     "required_keys_out_of_total": "Szükséges kulcsok az összessből",
     "fee": "Tranzakciós díj: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Megerősítés",
     "header": "Küldés",
     "share": "Megosztás",
@@ -537,7 +537,7 @@
     "tip": "Ez a funkció lehetővé teszi az érmék megtekintését, címkézését, befagyasztását vagy kiválasztását a pénztárca jobb kezelése érdekében. Több érmét is kiválaszthat a színes körök megérintésével."
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Maximum",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

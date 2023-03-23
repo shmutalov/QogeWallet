@@ -153,7 +153,7 @@
     "details_create": "Criar fatura",
     "details_error_decode": "Não foi possível decodificar o endereço Bitcoin",
     "details_fee_field_is_not_valid": "A taxa não é válida.",
-    "details_frozen": "{amount} BTC estão congelados",
+    "details_frozen": "{amount} QOGE estão congelados",
     "details_next": "Próximo",
     "details_no_signed_tx": "O arquivo selecionado não contém uma transação que possa ser importada.",
     "details_note_placeholder": "Nota pessoal",
@@ -469,7 +469,7 @@
     "vault_key": "Chave {number} do Cofre",
     "required_keys_out_of_total": "Chaves obrigatórias do total",
     "fee": "Taxa: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Confirmar",
     "header": "Enviar",
     "share": "Compartilhar",
@@ -554,7 +554,7 @@
     "tip": "Permite que você veja, marque, congele ou selecione moedas para gerenciar melhor sua carteira."
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Máx.",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

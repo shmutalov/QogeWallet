@@ -299,7 +299,7 @@
   "multisig": {
     "multisig_vault": "Сховище",
     "fee": "Комісія: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Підтвердити",
     "header": "Надіслати",
     "share": "Поділитися",
@@ -341,7 +341,7 @@
     "use_coins": "Використовувати Монети"
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Макс",
     "sat_vbyte": "sat/vByte"
   },

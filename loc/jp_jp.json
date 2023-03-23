@@ -153,7 +153,7 @@
     "details_create": "作成",
     "details_error_decode": "ビットコインアドレスを復号できません",
     "details_fee_field_is_not_valid": "手数料欄が正しくありません",
-    "details_frozen": "{amount}BTCがフリーズされています",
+    "details_frozen": "{amount}QOGEがフリーズされています",
     "details_next": "次",
     "details_no_signed_tx": "選択したファイルには、インポート可能なトランザクションが含まれていません。",
     "details_note_placeholder": "ラベル",
@@ -469,7 +469,7 @@
     "vault_key": "金庫キー {number}",
     "required_keys_out_of_total": "全体のうち必要なキー",
     "fee": "費用: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "承認",
     "header": "送る",
     "share": "共有",
@@ -554,7 +554,7 @@
     "tip": "ウォレットの閲覧、ラベル付け、フリーズ、コインの選択ができ、管理が向上する機能です。色付きの丸をタップすると複数のコインを選択できます。"
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "最大",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

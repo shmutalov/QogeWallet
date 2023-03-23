@@ -424,7 +424,7 @@
     "vault_key": "Kunci Bilik Kebal {number}",
     "required_keys_out_of_total": "Anak kunci diperlukan daripada jumlah keseluruhan",
     "fee": "Yuran: {number}",
-    "fee_btc": "{number} BTC",
+    "fee_btc": "{number} QOGE",
     "confirm": "Pasti",
     "header": "Hantar",
     "share": "Kongsi",
@@ -505,7 +505,7 @@
     "tip": "Ciri ini membolehkan anda untuk melihat, melabel, membeku, atau memilih duit bagi menambah baik pengurusan dompet. Anda boleh pilih pelbagai duit dengan mengetik pada bulatan berwarna."
   },
   "units": {
-    "BTC": "BTC",
+    "BTC": "QOGE",
     "MAX": "Maks",
     "sat_vbyte": "sat/vBait",
     "sats": "sat"
