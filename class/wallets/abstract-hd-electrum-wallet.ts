@@ -143,7 +143,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
   _getWIFByIndex(internal: boolean, index: number): string | false {
     if (!this.secret) return false;
     const seed = this._getSeed();
-    const root = bip32.fromSeed(seed);
+    const root = bip32.fromSeed(seed, QogecoinNetworks.mainnet);
     const path = `${this.getDerivationPath()}/${internal ? 1 : 0}/${index}`;
     const child = root.derivePath(path);
 
@@ -236,7 +236,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
     }
     // first, getting xpub
     const seed = this._getSeed();
-    const root = bip32.fromSeed(seed);
+    const root = bip32.fromSeed(seed, QogecoinNetworks.mainnet);
 
     const path = this.getDerivationPath();
     if (!path) {
@@ -1392,7 +1392,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
    */
   cosignPsbt(psbt: Psbt) {
     const seed = this._getSeed();
-    const hdRoot = bip32.fromSeed(seed);
+    const hdRoot = bip32.fromSeed(seed, QogecoinNetworks.mainnet);
 
     for (let cc = 0; cc < psbt.inputCount; cc++) {
       try {
@@ -1429,7 +1429,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
    * @returns {string} Hex string of fingerprint derived from mnemonics. Always has lenght of 8 chars and correct leading zeroes. All caps
    */
   static seedToFingerprint(seed: Buffer) {
-    const root = bip32.fromSeed(seed);
+    const root = bip32.fromSeed(seed, QogecoinNetworks.mainnet);
     let hex = root.fingerprint.toString('hex');
     while (hex.length < 8) hex = '0' + hex; // leading zeroes
     return hex.toUpperCase();
@@ -1471,7 +1471,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
 
   getBIP47FromSeed(): BIP47Interface {
     if (!this._bip47_instance) {
-      this._bip47_instance = bip47.fromBip39Seed(this.secret, undefined, this.passphrase);
+      this._bip47_instance = bip47.fromBip39Seed(this.secret, QogecoinNetworks.mainnetCoin, this.passphrase);
     }
 
     return this._bip47_instance;
@@ -1486,7 +1486,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
   }
 
   async fetchBIP47SenderPaymentCodes(): Promise<void> {
-    const bip47_instance = BIP47Factory(ecc).fromBip39Seed(this.secret, undefined, this.passphrase);
+    const bip47_instance = BIP47Factory(ecc).fromBip39Seed(this.secret, QogecoinNetworks.mainnetCoin, this.passphrase);
 
     const address = bip47_instance.getNotificationAddress();
 

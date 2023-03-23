@@ -159,7 +159,7 @@ export default class Selftest extends Component {
       const mnemonic =
         'honey risk juice trip orient galaxy win situate shoot anchor bounce remind horse traffic exotic since escape mimic ramp skin judge owner topple erode';
       const seed = bip39.mnemonicToSeedSync(mnemonic);
-      const root = bip32.fromSeed(seed);
+      const root = bip32.fromSeed(seed, QogecoinNetworks.mainnet);
 
       const path = "m/49'/0'/0'/0/0";
       const child = root.derivePath(path);

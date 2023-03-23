@@ -13,6 +13,8 @@ const createHash = require('create-hash');
 const reverse = require('buffer-reverse');
 const mn = require('electrum-mnemonic');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 const electrumSegwit = passphrase => ({
   prefix: mn.PREFIXES.segwit,
   ...(passphrase ? { passphrase } : {}),
@@ -322,7 +324,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
       seed = bip39.mnemonicToSeedSync(mnemonic, passphrase);
     }
 
-    const root = bip32.fromSeed(seed);
+    const root = bip32.fromSeed(seed, QogecoinNetworks.mainnet);
     const child = root.derivePath(path).neutered();
     return child.toBase58();
   }
@@ -887,7 +889,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
             seed = MultisigHDWallet.convertElectrumMnemonicToSeed(cosigner, passphrase);
           }
 
-          const hdRoot = bip32.fromSeed(seed);
+          const hdRoot = bip32.fromSeed(seed, QogecoinNetworks.mainnet);
           psbt.signInputHD(cc, hdRoot);
           signaturesMade++;
         }
@@ -931,7 +933,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
   }
 
   static isPathValid(path) {
-    const root = bip32.fromSeed(Buffer.alloc(32));
+    const root = bip32.fromSeed(Buffer.alloc(32), QogecoinNetworks.mainnet);
     try {
       root.derivePath(path);
       return true;
@@ -1038,7 +1040,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
           const seed = cosigner.startsWith(ELECTRUM_SEED_PREFIX)
             ? MultisigHDWallet.convertElectrumMnemonicToSeed(cosigner, passphrase)
             : bip39.mnemonicToSeedSync(cosigner, passphrase);
-          hdRoot = bip32.fromSeed(seed);
+          hdRoot = bip32.fromSeed(seed, QogecoinNetworks.mainnet);
         }
 
         try {

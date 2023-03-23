@@ -58,7 +58,7 @@ export class HDSegwitP2SHWallet extends AbstractHDElectrumWallet {
     }
     // first, getting xpub
     const seed = this._getSeed();
-    const root = bip32.fromSeed(seed);
+    const root = bip32.fromSeed(seed, QogecoinNetworks.mainnet);
 
     const path = this.getDerivationPath();
     const child = root.derivePath(path).neutered();

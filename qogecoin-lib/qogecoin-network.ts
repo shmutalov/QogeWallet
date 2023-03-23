@@ -14,5 +14,9 @@ class QogecoinMainnet implements bitcoin.networks.Network {
 
 const qogecoinMainnet = new QogecoinMainnet()
 export default {
-  mainnet: qogecoinMainnet
+  mainnet: qogecoinMainnet,
+  mainnetCoin: {
+    network: qogecoinMainnet,
+    coin: '0'
+  }
 }
