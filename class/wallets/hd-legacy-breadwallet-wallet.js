@@ -26,10 +26,10 @@ export class HDLegacyBreadwalletWallet extends HDLegacyP2PKHWallet {
   _calcNodeAddressByIndex(node, index, p2wpkh = false) {
     let _node;
     if (node === 0) {
-      _node = this._node0 || (this._node0 = bip32.fromBase58(this.getXpub()).derive(node));
+      _node = this._node0 || (this._node0 = bip32.fromBase58(this.getXpub(), QogecoinNetworks.mainnet).derive(node));
     }
     if (node === 1) {
-      _node = this._node1 || (this._node1 = bip32.fromBase58(this.getXpub()).derive(node));
+      _node = this._node1 || (this._node1 = bip32.fromBase58(this.getXpub(), QogecoinNetworks.mainnet).derive(node));
     }
     const pubkey = _node.derive(index).publicKey;
     const network = QogecoinNetworks.mainnet;

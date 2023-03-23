@@ -4,6 +4,8 @@ import BIP32Factory from 'bip32';
 import * as ecc from 'tiny-secp256k1';
 const bip32 = BIP32Factory(ecc);
 
+import QogecoinNetworks from '../qogecoin-lib/qogecoin-network';
+
 export class MultisigCosigner {
   constructor(data) {
     this._data = data;
@@ -131,7 +133,7 @@ export class MultisigCosigner {
     try {
       const tempWallet = new MultisigHDWallet();
       xpub = tempWallet._zpubToXpub(key);
-      bip32.fromBase58(xpub);
+      bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       return true;
     } catch (_) {}
 

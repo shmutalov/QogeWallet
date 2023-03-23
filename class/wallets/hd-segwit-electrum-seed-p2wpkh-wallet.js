@@ -53,7 +53,7 @@ export class HDSegwitElectrumSeedP2WPKHWallet extends HDSegwitBech32Wallet {
     if (this.internal_addresses_cache[index]) return this.internal_addresses_cache[index]; // cache hit
 
     const xpub = this._zpubToXpub(this.getXpub());
-    const node = bip32.fromBase58(xpub);
+    const node = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
     const address = bitcoin.payments.p2wpkh({
       network: QogecoinNetworks.mainnet,
       pubkey: node.derive(1).derive(index).publicKey,
@@ -67,7 +67,7 @@ export class HDSegwitElectrumSeedP2WPKHWallet extends HDSegwitBech32Wallet {
     if (this.external_addresses_cache[index]) return this.external_addresses_cache[index]; // cache hit
 
     const xpub = this._zpubToXpub(this.getXpub());
-    const node = bip32.fromBase58(xpub);
+    const node = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
     const address = bitcoin.payments.p2wpkh({
       network: QogecoinNetworks.mainnet,
       pubkey: node.derive(0).derive(index).publicKey,
@@ -92,13 +92,13 @@ export class HDSegwitElectrumSeedP2WPKHWallet extends HDSegwitBech32Wallet {
 
     if (node === 0 && !this._node0) {
       const xpub = this._zpubToXpub(this.getXpub());
-      const hdNode = bip32.fromBase58(xpub);
+      const hdNode = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       this._node0 = hdNode.derive(node);
     }
 
     if (node === 1 && !this._node1) {
       const xpub = this._zpubToXpub(this.getXpub());
-      const hdNode = bip32.fromBase58(xpub);
+      const hdNode = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       this._node1 = hdNode.derive(node);
     }
 

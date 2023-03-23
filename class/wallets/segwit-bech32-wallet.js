@@ -15,7 +15,7 @@ export class SegwitBech32Wallet extends LegacyWallet {
     if (this._address) return this._address;
     let address;
     try {
-      const keyPair = ECPair.fromWIF(this.secret);
+      const keyPair = ECPair.fromWIF(this.secret, QogecoinNetworks.mainnet);
       if (!keyPair.compressed) {
         console.warn('only compressed public keys are good for segwit');
         return false;
@@ -78,7 +78,7 @@ export class SegwitBech32Wallet extends LegacyWallet {
     inputs.forEach(input => {
       if (!skipSigning) {
         // skiping signing related stuff
-        keyPair = ECPair.fromWIF(this.secret); // secret is WIF
+        keyPair = ECPair.fromWIF(this.secret, QogecoinNetworks.mainnet); // secret is WIF
       }
       values[c] = input.value;
       c++;

@@ -240,7 +240,7 @@ export class LightningLdkWallet extends LightningCustodianWallet {
   }
 
   static async _script2address(scriptHex: string) {
-    return bitcoin.address.fromOutputScript(Buffer.from(scriptHex, 'hex'));
+    return bitcoin.address.fromOutputScript(Buffer.from(scriptHex, 'hex'), QogecoinNetworks.mainnet);
   }
 
   async selftest() {

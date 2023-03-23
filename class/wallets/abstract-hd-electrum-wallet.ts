@@ -162,13 +162,13 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
 
     if (node === 0 && !this._node0) {
       const xpub = this._zpubToXpub(this.getXpub());
-      const hdNode = bip32.fromBase58(xpub);
+      const hdNode = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       this._node0 = hdNode.derive(node);
     }
 
     if (node === 1 && !this._node1) {
       const xpub = this._zpubToXpub(this.getXpub());
-      const hdNode = bip32.fromBase58(xpub);
+      const hdNode = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       this._node1 = hdNode.derive(node);
     }
 
@@ -195,13 +195,13 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
 
     if (node === 0 && !this._node0) {
       const xpub = this._zpubToXpub(this.getXpub());
-      const hdNode = bip32.fromBase58(xpub);
+      const hdNode = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       this._node0 = hdNode.derive(node);
     }
 
     if (node === 1 && !this._node1) {
       const xpub = this._zpubToXpub(this.getXpub());
-      const hdNode = bip32.fromBase58(xpub);
+      const hdNode = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       this._node1 = hdNode.derive(node);
     }
 
@@ -1164,7 +1164,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
       let keyPair;
       if (!skipSigning) {
         // skiping signing related stuff
-        keyPair = ECPair.fromWIF(this._getWifForAddress(String(input.address)));
+        keyPair = ECPair.fromWIF(this._getWifForAddress(String(input.address)), QogecoinNetworks.mainnet);
         keypairs[c] = keyPair;
       }
       values[c] = input.value;
@@ -1408,7 +1408,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
           if (!wif) {
             throw new Error('Internal error: cant get WIF by index during cosingPsbt');
           }
-          const keyPair = ECPair.fromWIF(wif);
+          const keyPair = ECPair.fromWIF(wif, QogecoinNetworks.mainnet);
           try {
             psbt.signInput(cc, keyPair);
           } catch (e) {} // protects agains duplicate cosignings or if this output can't be signed with current wallet

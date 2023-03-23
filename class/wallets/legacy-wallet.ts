@@ -82,7 +82,7 @@ export class LegacyWallet extends AbstractWallet {
     if (this._address) return this._address;
     let address;
     try {
-      const keyPair = ECPair.fromWIF(this.secret);
+      const keyPair = ECPair.fromWIF(this.secret, QogecoinNetworks.mainnet);
       address = bitcoin.payments.p2pkh({
         network: QogecoinNetworks.mainnet,
         pubkey: keyPair.publicKey,
@@ -434,7 +434,7 @@ export class LegacyWallet extends AbstractWallet {
     inputs.forEach(input => {
       if (!skipSigning) {
         // skiping signing related stuff
-        keyPair = ECPair.fromWIF(this.secret); // secret is WIF
+        keyPair = ECPair.fromWIF(this.secret, QogecoinNetworks.mainnet); // secret is WIF
       }
       values[c] = input.value;
       c++;
@@ -592,7 +592,7 @@ export class LegacyWallet extends AbstractWallet {
   signMessage(message: string, address: string, useSegwit = true): string {
     const wif = this._getWIFbyAddress(address);
     if (!wif) throw new Error('Invalid address');
-    const keyPair = ECPair.fromWIF(wif);
+    const keyPair = ECPair.fromWIF(wif, QogecoinNetworks.mainnet);
     const privateKey = keyPair.privateKey;
     if (!privateKey) throw new Error('Invalid private key');
     const options = this.segwitType && useSegwit ? { segwitType: this.segwitType } : undefined;

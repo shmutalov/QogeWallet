@@ -5,6 +5,8 @@ import { ECPairFactory } from 'ecpair';
 const ecc = require('tiny-secp256k1');
 const ECPair = ECPairFactory(ecc);
 
+import QogecoinNetworks from '../qogecoin-lib/qogecoin-network';
+
 const delay = milliseconds => new Promise(resolve => setTimeout(resolve, milliseconds));
 
 // Implements IPayjoinClientWallet
@@ -23,9 +25,9 @@ export default class PayjoinTransaction {
     for (const [index, input] of unfinalized.data.inputs.entries()) {
       delete input.finalScriptWitness;
 
-      const address = bitcoin.address.fromOutputScript(input.witnessUtxo.script);
+      const address = bitcoin.address.fromOutputScript(input.witnessUtxo.script, QogecoinNetworks.mainnet);
       const wif = this._wallet._getWifForAddress(address);
-      const keyPair = ECPair.fromWIF(wif);
+      const keyPair = ECPair.fromWIF(wif, QogecoinNetworks.mainnet);
 
       unfinalized.signInput(index, keyPair);
     }
@@ -46,10 +48,10 @@ export default class PayjoinTransaction {
     // Do this without relying on private methods
 
     for (const [index, input] of payjoinPsbt.data.inputs.entries()) {
-      const address = bitcoin.address.fromOutputScript(input.witnessUtxo.script);
+      const address = bitcoin.address.fromOutputScript(input.witnessUtxo.script, QogecoinNetworks.mainnet);
       try {
         const wif = this._wallet._getWifForAddress(address);
-        const keyPair = ECPair.fromWIF(wif);
+        const keyPair = ECPair.fromWIF(wif, QogecoinNetworks.mainnet);
         payjoinPsbt.signInput(index, keyPair).finalizeInput(index);
       } catch (e) {}
     }
@@ -81,7 +83,7 @@ export default class PayjoinTransaction {
   }
 
   async isOwnOutputScript(outputScript) {
-    const address = bitcoin.address.fromOutputScript(outputScript);
+    const address = bitcoin.address.fromOutputScript(outputScript, QogecoinNetworks.mainnet);
 
     return this._wallet.weOwnAddress(address);
   }

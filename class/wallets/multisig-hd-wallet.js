@@ -146,7 +146,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
     try {
       const tempWallet = new MultisigHDWallet();
       xpub = tempWallet._zpubToXpub(key);
-      bip32.fromBase58(xpub);
+      bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       return true;
     } catch (_) {}
 
@@ -156,7 +156,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
   static isXprvValid(xprv) {
     try {
       xprv = MultisigHDWallet.convertMultisigXprvToRegularXprv(xprv);
-      bip32.fromBase58(xprv);
+      bip32.fromBase58(xprv, QogecoinNetworks.mainnet);
       return true;
     } catch (_) {
       return false;
@@ -223,7 +223,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
   }
 
   static convertXprvToXpub(xprv) {
-    const restored = bip32.fromBase58(MultisigHDWallet.convertMultisigXprvToRegularXprv(xprv));
+    const restored = bip32.fromBase58(MultisigHDWallet.convertMultisigXprvToRegularXprv(xprv), QogecoinNetworks.mainnet);
     return restored.neutered().toBase58();
   }
 
@@ -267,7 +267,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
 
       if (!this._nodes[nodeIndex][cosignerIndex]) {
         const xpub = this._getXpubFromCosigner(cosigner);
-        const hdNode = bip32.fromBase58(xpub);
+        const hdNode = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
         _node = hdNode.derive(nodeIndex);
         this._nodes[nodeIndex][cosignerIndex] = _node;
       } else {
@@ -673,7 +673,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
       const masterFingerprint = Buffer.from(this._cosignersFingerprints[cosignerIndex], 'hex');
 
       const xpub = this._getXpubFromCosigner(cosigner);
-      const hdNode0 = bip32.fromBase58(xpub);
+      const hdNode0 = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       const splt = path.split('/');
       const internal = +splt[splt.length - 2];
       const index = +splt[splt.length - 1];
@@ -770,7 +770,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
       const masterFingerprint = Buffer.from(this._cosignersFingerprints[cosignerIndex], 'hex');
 
       const xpub = this._getXpubFromCosigner(cosigner);
-      const hdNode0 = bip32.fromBase58(xpub);
+      const hdNode0 = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       const splt = path.split('/');
       const internal = +splt[splt.length - 2];
       const index = +splt[splt.length - 1];
@@ -1034,7 +1034,7 @@ export class MultisigHDWallet extends AbstractHDElectrumWallet {
         let hdRoot;
         if (MultisigHDWallet.isXprvString(cosigner)) {
           const xprv = MultisigHDWallet.convertMultisigXprvToRegularXprv(cosigner);
-          hdRoot = bip32.fromBase58(xprv);
+          hdRoot = bip32.fromBase58(xprv, QogecoinNetworks.mainnet);
         } else {
           const passphrase = this._cosignersPassphrases[cosignerIndex];
           const seed = cosigner.startsWith(ELECTRUM_SEED_PREFIX)

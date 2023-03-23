@@ -1,6 +1,8 @@
 import { SegwitBech32Wallet } from './segwit-bech32-wallet';
 const bitcoin = require('bitcoinjs-lib');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 export class TaprootWallet extends SegwitBech32Wallet {
   static type = 'taproot';
   static typeReadable = 'P2 TR';
@@ -15,7 +17,7 @@ export class TaprootWallet extends SegwitBech32Wallet {
   static scriptPubKeyToAddress(scriptPubKey) {
     try {
       const publicKey = Buffer.from(scriptPubKey, 'hex');
-      return bitcoin.address.fromOutputScript(publicKey, bitcoin.networks.bitcoin);
+      return bitcoin.address.fromOutputScript(publicKey, QogecoinNetworks.mainnet);
     } catch (_) {
       return false;
     }

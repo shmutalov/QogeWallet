@@ -273,7 +273,7 @@ export class WatchOnlyWallet extends LegacyWallet {
         xpub = this.secret;
       }
 
-      const hdNode = bip32.fromBase58(xpub);
+      const hdNode = bip32.fromBase58(xpub, QogecoinNetworks.mainnet);
       hdNode.derive(0);
       return true;
     } catch (_) {}
