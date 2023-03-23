@@ -1501,7 +1501,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
 
         // final check if PC is even valid (could've been constructed by a buggy code, and our code would crash with that):
         try {
-          BIP47Factory(ecc).fromPaymentCode(paymentCode);
+          BIP47Factory(ecc).fromPaymentCode(paymentCode, QogecoinNetworks.mainnetCoin);
         } catch (_) {
           continue;
         }
@@ -1531,7 +1531,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
     }
 
     const bip47_instance = this.getBIP47FromSeed();
-    const senderBIP47_instance = bip47.fromPaymentCode(paymentCode);
+    const senderBIP47_instance = bip47.fromPaymentCode(paymentCode, QogecoinNetworks.mainnetCoin);
     const remotePaymentNode = senderBIP47_instance.getPaymentCodeNode();
     const hdNode = bip47_instance.getPaymentWallet(remotePaymentNode, index);
     const address = this._hdNodeToAddress(hdNode);
@@ -1550,7 +1550,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
 
   _getBIP47WIF(paymentCode: string, index: number): string {
     const bip47_instance = this.getBIP47FromSeed();
-    const senderBIP47_instance = bip47.fromPaymentCode(paymentCode);
+    const senderBIP47_instance = bip47.fromPaymentCode(paymentCode, QogecoinNetworks.mainnetCoin);
     const remotePaymentNode = senderBIP47_instance.getPaymentCodeNode();
     const hdNode = bip47_instance.getPaymentWallet(remotePaymentNode, index);
     return hdNode.toWIF();
@@ -1558,7 +1558,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
 
   _getBIP47PubkeyByIndex(paymentCode: string, index: number): Buffer {
     const bip47_instance = this.getBIP47FromSeed();
-    const senderBIP47_instance = bip47.fromPaymentCode(paymentCode);
+    const senderBIP47_instance = bip47.fromPaymentCode(paymentCode, QogecoinNetworks.mainnetCoin);
     const remotePaymentNode = senderBIP47_instance.getPaymentCodeNode();
     const hdNode = bip47_instance.getPaymentWallet(remotePaymentNode, index);
     return hdNode.publicKey;
