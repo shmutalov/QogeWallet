@@ -230,7 +230,7 @@ export const TransactionListItem = React.memo(({ item, itemPriceUnit = BitcoinUn
   const handleOnCopyTransactionID = useCallback(() => Clipboard.setString(item.hash), [item.hash]);
   const handleOnCopyNote = useCallback(() => Clipboard.setString(subtitle), [subtitle]);
   const handleOnViewOnBlockExplorer = useCallback(() => {
-    const url = `https://qogecoin-explorer.gorynich.ml/tx/${item.hash}`;
+    const url = `https://qogecoin-explorer.gorynich.ml:8443/tx/${item.hash}`;
     Linking.canOpenURL(url).then(supported => {
       if (supported) {
         Linking.openURL(url);
@@ -238,7 +238,7 @@ export const TransactionListItem = React.memo(({ item, itemPriceUnit = BitcoinUn
     });
   }, [item.hash]);
   const handleCopyOpenInBlockExplorerPress = useCallback(() => {
-    Clipboard.setString(`https://qogecoin-explorer.gorynich.ml/tx/${item.hash}`);
+    Clipboard.setString(`https://qogecoin-explorer.gorynich.ml:8443/tx/${item.hash}`);
   }, [item.hash]);
 
   const onToolTipPress = useCallback(

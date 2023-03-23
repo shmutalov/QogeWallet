@@ -357,7 +357,7 @@ const TransactionsStatus = () => {
       <HandoffComponent
         title={loc.transactions.details_title}
         type={HandoffComponent.activityTypes.ViewInBlockExplorer}
-        url={`https://qogecoin-explorer.gorynich.ml/tx/${tx.hash}`}
+        url={`https://qogecoin-explorer.gorynich.ml:8443/tx/${tx.hash}`}
       />
 
       <StatusBar barStyle="default" />

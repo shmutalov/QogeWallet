@@ -222,7 +222,7 @@ const SuccessScreen = ({ tx }) => {
           <BlueSpacing20 />
           <BlueTextCentered>{loc.settings.success_transaction_broadcasted}</BlueTextCentered>
           <BlueSpacing10 />
-          <BlueButtonLink title={loc.settings.open_link_in_explorer} onPress={() => Linking.openURL(`https://qogecoin-explorer.gorynich.ml/tx/${tx}`)} />
+          <BlueButtonLink title={loc.settings.open_link_in_explorer} onPress={() => Linking.openURL(`https://qogecoin-explorer.gorynich.ml:8443/tx/${tx}`)} />
         </View>
       </BlueCard>
     </View>
