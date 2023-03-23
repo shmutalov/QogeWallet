@@ -2,7 +2,7 @@ import * as bitcoin from 'bitcoinjs-lib'
 
 class QogecoinMainnet implements bitcoin.networks.Network {
   messagePrefix = '\x18Qogecoin Signed Message:\n';
-  bech32 = 'bc';
+  bech32 = 'bq';
   bip32 = {
     public: 0x03f6b840,
     private: 0x03f6b817,
