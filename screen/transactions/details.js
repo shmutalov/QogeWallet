@@ -115,7 +115,7 @@ const TransactionsDetails = () => {
   };
 
   const handleOnOpenTransactionOnBlockExporerTapped = () => {
-    const url = `https://qogecoin-explorer.gorynich.ml/tx/${tx.hash}`;
+    const url = `https://qogecoin-explorer.gorynich.ml:8443/tx/${tx.hash}`;
     Linking.canOpenURL(url)
       .then(supported => {
         if (supported) {
@@ -138,7 +138,7 @@ const TransactionsDetails = () => {
 
   const handleCopyPress = stringToCopy => {
     Clipboard.setString(
-      stringToCopy !== TransactionsDetails.actionKeys.CopyToClipboard ? stringToCopy : `https://qogecoin-explorer.gorynich.ml/tx/${tx.hash}`,
+      stringToCopy !== TransactionsDetails.actionKeys.CopyToClipboard ? stringToCopy : `https://qogecoin-explorer.gorynich.ml:8443/tx/${tx.hash}`,
     );
   };
 
@@ -214,7 +214,7 @@ const TransactionsDetails = () => {
       <HandoffComponent
         title={loc.transactions.details_title}
         type={HandoffComponent.activityTypes.ViewInBlockExplorer}
-        url={`https://qogecoin-explorer.gorynich.ml/tx/${tx.hash}`}
+        url={`https://qogecoin-explorer.gorynich.ml:8443/tx/${tx.hash}`}
       />
       <StatusBar barStyle="default" />
       <BlueCard>
