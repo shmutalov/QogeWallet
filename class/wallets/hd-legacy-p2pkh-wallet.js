@@ -4,6 +4,8 @@ import * as ecc from 'tiny-secp256k1';
 const bip32 = BIP32Factory(ecc);
 const BlueElectrum = require('../../blue_modules/BlueElectrum');
 
+import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
+
 /**
  * HD Wallet (BIP39).
  * In particular, BIP44 (P2PKH legacy addressess)
