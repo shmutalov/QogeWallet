@@ -45,7 +45,7 @@ describe('QogeWallet UI Tests - import Watch-only wallet (zpub)', () => {
     await sup('Test');
     await expect(element(by.id('BitcoinAddressQRCodeContainer'))).toBeVisible();
 
-    await expect(element(by.text('bitcoin:bc1qtc9zquvq7lgq87kzsgltvv4etwm9uxphfkvkay?amount=1&label=Test'))).toBeVisible();
+    await expect(element(by.text('qogecoin:bc1qtc9zquvq7lgq87kzsgltvv4etwm9uxphfkvkay?amount=1&label=Test'))).toBeVisible();
     await device.pressBack();
 
     await element(by.id('SendButton')).tap();

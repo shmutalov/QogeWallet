@@ -10,7 +10,7 @@ using namespace Windows::UI::Xaml;
 using namespace Windows::UI::Xaml::Controls;
 using namespace Windows::UI::Xaml::Navigation;
 using namespace Windows::ApplicationModel;
-namespace winrt::bluewallet::implementation
+namespace winrt::qogewallet::implementation
 {
 /// <summary>
 /// Initializes the singleton application object.  This is the first line of
@@ -89,4 +89,4 @@ void App::OnNavigationFailed(IInspectable const&, NavigationFailedEventArgs cons
     throw hresult_error(E_FAIL, hstring(L"Failed to load Page ") + e.SourcePageType().Name);
 }
 
-} // namespace winrt::bluewallet::implementation
+} // namespace winrt::qogewallet::implementation

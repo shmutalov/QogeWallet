@@ -94,7 +94,7 @@ export class LightningCustodianWallet extends LegacyWallet {
 
   async createAccount(isTest) {
     const response = await this._api.post('/create', {
-      body: { partnerid: 'bluewallet', accounttype: (isTest && 'test') || 'common' },
+      body: { partnerid: 'qogecoin', accounttype: (isTest && 'test') || 'common' },
       headers: { 'Access-Control-Allow-Origin': '*', 'Content-Type': 'application/json' },
     });
     const json = response.body;

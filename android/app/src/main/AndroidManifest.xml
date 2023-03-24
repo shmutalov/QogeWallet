@@ -69,11 +69,9 @@
           <action android:name="android.intent.action.VIEW" />
           <category android:name="android.intent.category.DEFAULT" />
           <category android:name="android.intent.category.BROWSABLE" />
-          <data android:scheme="bitcoin" />
-          <data android:scheme="lightning" />
-          <data android:scheme="bluewallet" />
-          <data android:scheme="lapp" />
-          <data android:scheme="blue" />
+          <data android:scheme="qogecoin" />
+          <data android:scheme="qogewallet" />
+          <data android:scheme="qoge" />
           <data android:scheme="http" />
           <data android:scheme="https" />
         </intent-filter>

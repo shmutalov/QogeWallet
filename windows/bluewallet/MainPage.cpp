@@ -9,7 +9,7 @@
 using namespace winrt;
 using namespace Windows::UI::Xaml;
 
-namespace winrt::bluewallet::implementation
+namespace winrt::qogewallet::implementation
 {
     MainPage::MainPage()
     {

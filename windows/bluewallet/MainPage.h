@@ -2,7 +2,7 @@
 #include "MainPage.g.h"
 #include <winrt/Microsoft.ReactNative.h>
 
-namespace winrt::bluewallet::implementation
+namespace winrt::qogewallet::implementation
 {
     struct MainPage : MainPageT<MainPage>
     {
@@ -10,7 +10,7 @@ namespace winrt::bluewallet::implementation
     };
 }
 
-namespace winrt::bluewallet::factory_implementation
+namespace winrt::qogewallet::factory_implementation
 {
     struct MainPage : MainPageT<MainPage, implementation::MainPage>
     {

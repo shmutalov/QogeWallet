@@ -4,7 +4,7 @@
 
 namespace activation = winrt::Windows::ApplicationModel::Activation;
 
-namespace winrt::bluewallet::implementation
+namespace winrt::qogewallet::implementation
 {
     struct App : AppT<App>
     {
@@ -16,4 +16,4 @@ namespace winrt::bluewallet::implementation
       private:
         using super = AppT<App>;
     };
-} // namespace winrt::bluewallet::implementation
+} // namespace winrt::qogewallet::implementation

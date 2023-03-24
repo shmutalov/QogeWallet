@@ -49,7 +49,7 @@ const { EventEmitter } = NativeModules;
 LogBox.ignoreLogs(['Require cycle:']);
 
 const ClipboardContentType = Object.freeze({
-  BITCOIN: 'BITCOIN',
+  QOGECOIN: 'QOGECOIN',
   LIGHTNING: 'LIGHTNING',
 });
 
@@ -314,11 +314,11 @@ const App = () => {
       ) {
         let contentType;
         if (isBitcoinAddress) {
-          contentType = ClipboardContentType.BITCOIN;
+          contentType = ClipboardContentType.QOGECOIN;
         } else if (isLightningInvoice || isLNURL) {
           contentType = ClipboardContentType.LIGHTNING;
         } else if (isBothBitcoinAndLightning) {
-          contentType = ClipboardContentType.BITCOIN;
+          contentType = ClipboardContentType.QOGECOIN;
         }
         showClipboardAlert({ contentType });
       }
@@ -341,7 +341,7 @@ const App = () => {
           {
             options: [loc._.cancel, loc._.continue],
             title: loc._.clipboard,
-            message: contentType === ClipboardContentType.BITCOIN ? loc.wallets.clipboard_bitcoin : loc.wallets.clipboard_lightning,
+            message: contentType === ClipboardContentType.QOGECOIN ? loc.wallets.clipboard_bitcoin : loc.wallets.clipboard_lightning,
             cancelButtonIndex: 0,
           },
           buttonIndex => {
@@ -363,7 +363,7 @@ const App = () => {
             },
           ],
           title: loc._.clipboard,
-          message: contentType === ClipboardContentType.BITCOIN ? loc.wallets.clipboard_bitcoin : loc.wallets.clipboard_lightning,
+          message: contentType === ClipboardContentType.QOGECOIN ? loc.wallets.clipboard_bitcoin : loc.wallets.clipboard_lightning,
         });
       }
     });

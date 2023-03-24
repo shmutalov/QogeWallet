@@ -141,7 +141,7 @@ async function connectMain() {
         setTimeout(connectMain, usingPeer.host.endsWith('.onion') ? 4000 : 500);
       }
     };
-    const ver = await mainClient.initElectrum({ client: 'bluewallet', version: '1.4' });
+    const ver = await mainClient.initElectrum({ client: 'qogecoin', version: '1.4' });
     if (ver && ver[0]) {
       console.log('connected to ', ver);
       serverName = ver[0];

@@ -31,7 +31,7 @@ const IsItMyAddress = () => {
 
   const checkAddress = () => {
     Keyboard.dismiss();
-    const cleanAddress = address.replace('bitcoin:', '').replace('BITCOIN:', '').replace('bitcoin=', '').split('?')[0];
+    const cleanAddress = address.replace('qogecoin:', '').replace('QOGECOIN:', '').replace('bitcoin=', '').split('?')[0];
     const _result = [];
     for (const w of wallets) {
       if (w.weOwnAddress(cleanAddress)) {

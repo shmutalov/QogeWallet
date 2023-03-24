@@ -15,10 +15,10 @@ class DeeplinkSchemaMatch {
     if (typeof schemaString !== 'string' || schemaString.length <= 0) return false;
     const lowercaseString = schemaString.trim().toLowerCase();
     return (
-      lowercaseString.startsWith('bitcoin:') ||
+      lowercaseString.startsWith('qogecoin:') ||
       lowercaseString.startsWith('lightning:') ||
       lowercaseString.startsWith('blue:') ||
-      lowercaseString.startsWith('bluewallet:') ||
+      lowercaseString.startsWith('qogewallet:') ||
       lowercaseString.startsWith('lapp:')
     );
   }
@@ -28,7 +28,7 @@ class DeeplinkSchemaMatch {
    * If the content is recognizable, create a dictionary with the respective
    * navigation dictionary required by react-navigation
    *
-   * @param event {{url: string}} URL deeplink as passed to app, e.g. `bitcoin:bc1qh6tf004ty7z7un2v5ntu4mkf630545gvhs45u7?amount=666&label=Yo`
+   * @param event {{url: string}} URL deeplink as passed to app, e.g. `qogecoin:bc1qh6tf004ty7z7un2v5ntu4mkf630545gvhs45u7?amount=666&label=Yo`
    * @param completionHandler {function} Callback that returns [string, params: object]
    */
   static navigationRouteFor(event, completionHandler, context = { wallets: [], saveToDisk: () => {}, addWallet: () => {} }) {
@@ -39,10 +39,10 @@ class DeeplinkSchemaMatch {
       return;
     }
 
-    if (event.url.toLowerCase().startsWith('bluewallet:bitcoin:') || event.url.toLowerCase().startsWith('bluewallet:lightning:')) {
+    if (event.url.toLowerCase().startsWith('qogewallet:qogecoin:') || event.url.toLowerCase().startsWith('qogewallet:lightning:')) {
       event.url = event.url.substring(11);
-    } else if (event.url.toLocaleLowerCase().startsWith('bluewallet://widget?action=')) {
-      event.url = event.url.substring('bluewallet://'.length);
+    } else if (event.url.toLocaleLowerCase().startsWith('qogewallet://widget?action=')) {
+      event.url = event.url.substring('qogewallet://'.length);
     }
 
     if (DeeplinkSchemaMatch.isWidgetAction(event.url)) {
@@ -188,7 +188,7 @@ class DeeplinkSchemaMatch {
     } else {
       const urlObject = url.parse(event.url, true); // eslint-disable-line n/no-deprecated-api
       (async () => {
-        if (urlObject.protocol === 'bluewallet:' || urlObject.protocol === 'lapp:' || urlObject.protocol === 'blue:') {
+        if (urlObject.protocol === 'qogewallet:' || urlObject.protocol === 'lapp:' || urlObject.protocol === 'blue:') {
           switch (urlObject.host) {
             case 'openlappbrowser': {
               console.log('opening LAPP', urlObject.query.url);
@@ -271,28 +271,28 @@ class DeeplinkSchemaMatch {
   }
 
   /**
-   * Extracts server from a deeplink like `bluewallet:setelectrumserver?server=qogecoin-electrum.gorynich.ml%3A443%3As`
+   * Extracts server from a deeplink like `qogewallet:setelectrumserver?server=qogecoin-electrum.gorynich.ml%3A443%3As`
    * returns FALSE if none found
    *
    * @param url {string}
    * @return {string|boolean}
    */
   static getServerFromSetElectrumServerAction(url) {
-    if (!url.startsWith('bluewallet:setelectrumserver') && !url.startsWith('setelectrumserver')) return false;
+    if (!url.startsWith('qogewallet:setelectrumserver') && !url.startsWith('setelectrumserver')) return false;
     const splt = url.split('server=');
     if (splt[1]) return decodeURIComponent(splt[1]);
     return false;
   }
 
   /**
-   * Extracts url from a deeplink like `bluewallet:setlndhuburl?url=https%3A%2F%2Flndhub.herokuapp.com`
+   * Extracts url from a deeplink like `qogewallet:setlndhuburl?url=https%3A%2F%2Flndhub.herokuapp.com`
    * returns FALSE if none found
    *
    * @param url {string}
    * @return {string|boolean}
    */
   static getUrlFromSetLndhubUrlAction(url) {
-    if (!url.startsWith('bluewallet:setlndhuburl') && !url.startsWith('setlndhuburl')) return false;
+    if (!url.startsWith('qogewallet:setlndhuburl') && !url.startsWith('setlndhuburl')) return false;
     const splt = url.split('url=');
     if (splt[1]) return decodeURIComponent(splt[1]);
     return false;
@@ -346,7 +346,7 @@ class DeeplinkSchemaMatch {
   }
 
   static isBitcoinAddress(address) {
-    address = address.replace('://', ':').replace('bitcoin:', '').replace('BITCOIN:', '').replace('bitcoin=', '').split('?')[0];
+    address = address.replace('://', ':').replace('qogecoin:', '').replace('QOGECOIN:', '').replace('bitcoin=', '').split('?')[0];
     let isValidBitcoinAddress = false;
     try {
       bitcoin.address.toOutputScript(address, QogecoinNetworks.mainnet);
@@ -378,15 +378,15 @@ class DeeplinkSchemaMatch {
   }
 
   static isBothBitcoinAndLightning(url) {
-    if (url.includes('lightning') && (url.includes('bitcoin') || url.includes('BITCOIN'))) {
-      const txInfo = url.split(/(bitcoin:\/\/|BITCOIN:\/\/|bitcoin:|BITCOIN:|lightning:|lightning=|bitcoin=)+/);
+    if (url.includes('lightning') && (url.includes('qogecoin') || url.includes('QOGECOIN'))) {
+      const txInfo = url.split(/(qogecoin:\/\/|QOGECOIN:\/\/|qogecoin:|QOGECOIN:|lightning:|lightning=|bitcoin=)+/);
       let bitcoin;
       let lndInvoice;
       for (const [index, value] of txInfo.entries()) {
         try {
           // Inside try-catch. We dont wan't to  crash in case of an out-of-bounds error.
-          if (value.startsWith('bitcoin') || value.startsWith('BITCOIN')) {
-            bitcoin = `bitcoin:${txInfo[index + 1]}`;
+          if (value.startsWith('qogecoin') || value.startsWith('QOGECOIN')) {
+            bitcoin = `qogecoin:${txInfo[index + 1]}`;
             if (!DeeplinkSchemaMatch.isBitcoinAddress(bitcoin)) {
               bitcoin = false;
               break;
@@ -416,8 +416,8 @@ class DeeplinkSchemaMatch {
   static bip21decode(uri) {
     if (!uri) return {};
     let replacedUri = uri;
-    for (const replaceMe of ['BITCOIN://', 'bitcoin://', 'BITCOIN:']) {
-      replacedUri = replacedUri.replace(replaceMe, 'bitcoin:');
+    for (const replaceMe of ['QOGECOIN://', 'qogecoin://', 'QOGECOIN:']) {
+      replacedUri = replacedUri.replace(replaceMe, 'qogecoin:');
     }
 
     return bip21.decode(replacedUri);

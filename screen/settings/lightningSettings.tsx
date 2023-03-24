@@ -87,7 +87,7 @@ const LightningSettings: React.FC & { navigationOptions: NavigationOptionsGetter
   }, [params?.url]);
 
   const setLndhubURI = (value: string) => {
-    // in case user scans a QR with a deeplink like `bluewallet:setlndhuburl?url=https%3A%2F%2Flndhub.herokuapp.com`
+    // in case user scans a QR with a deeplink like `qogewallet:setlndhuburl?url=https%3A%2F%2Flndhub.herokuapp.com`
     const setLndHubUrl = DeeplinkSchemaMatch.getUrlFromSetLndhubUrlAction(value);
 
     setURI(typeof setLndHubUrl === 'string' ? setLndHubUrl.trim() : value.trim());

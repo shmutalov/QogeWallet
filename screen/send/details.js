@@ -387,7 +387,7 @@ const SendDetails = () => {
   /**
    * TODO: refactor this mess, get rid of regexp, use https://github.com/bitcoinjs/bitcoinjs-lib/issues/890 etc etc
    *
-   * @param data {String} Can be address or `bitcoin:xxxxxxx` uri scheme, or invalid garbage
+   * @param data {String} Can be address or `qogecoin:xxxxxxx` uri scheme, or invalid garbage
    */
   const processAddressData = data => {
     const currentIndex = scrollIndex.current;
@@ -398,7 +398,7 @@ const SendDetails = () => {
       return Alert.alert(loc.errors.error, loc.send.details_address_field_is_not_valid);
     }
 
-    const dataWithoutSchema = data.replace('bitcoin:', '').replace('BITCOIN:', '');
+    const dataWithoutSchema = data.replace('qogecoin:', '').replace('QOGECOIN:', '');
     if (wallet.isAddressValid(dataWithoutSchema)) {
       setAddresses(addresses => {
         addresses[scrollIndex.current].address = dataWithoutSchema;
@@ -411,7 +411,7 @@ const SendDetails = () => {
     let address = '';
     let options;
     try {
-      if (!data.toLowerCase().startsWith('bitcoin:')) data = `bitcoin:${data}`;
+      if (!data.toLowerCase().startsWith('qogecoin:')) data = `qogecoin:${data}`;
       const decoded = DeeplinkSchemaMatch.bip21decode(data);
       address = decoded.address;
       options = decoded.options;
