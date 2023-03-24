@@ -24,7 +24,7 @@
   },
   "azteco": {
     "codeIs": "El codi del teu val és",
-    "errorBeforeRefeem": "Abans de canviar, primer heu d’afegir un moneder de Bitcoin.",
+    "errorBeforeRefeem": "Abans de canviar, primer heu d’afegir un moneder de Qogecoin.",
     "errorSomething": "Quelcom ha anat malament. Aquest val continua sent vàlid? ",
     "redeem": "Canviar al moneder",
     "redeemButton": "Canviar",
@@ -140,7 +140,7 @@
     "details_scan": "Escanejar",
     "details_total_exceeds_balance": "La quantitat excedeix el balanç disponible.",
     "details_unrecognized_file_format": "Format de fitxer no reconegut",
-    "details_wallet_before_tx": "Abans de crear una transacció, primer heu d’afegir un moneder Bitcoin.",
+    "details_wallet_before_tx": "Abans de crear una transacció, primer heu d’afegir un moneder Qogecoin.",
     "dynamic_init": "Inicialitzant",
     "dynamic_next": "Següent",
     "dynamic_prev": "Anterior",
@@ -260,8 +260,8 @@
     "updating": "Actualitzant..."
   },
   "wallets": {
-    "add_bitcoin": "Bitcoin",
-    "add_bitcoin_explain": "Moneder de Bitcoin senzill i potent",
+    "add_bitcoin": "Qogecoin",
+    "add_bitcoin_explain": "Moneder de Qogecoin senzill i potent",
     "add_create": "Crear",
     "add_import_wallet": "Importar moneder",
     "add_lightning": "Lightning",

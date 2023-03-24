@@ -7,7 +7,7 @@ const bitcoin = require('bitcoinjs-lib');
 import QogecoinNetworks from '../../qogecoin-lib/qogecoin-network';
 
 /**
- * Creates Segwit P2SH Bitcoin address
+ * Creates Segwit P2SH Qogecoin address
  * @param pubkey
  * @param network
  * @returns {String}

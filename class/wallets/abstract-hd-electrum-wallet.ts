@@ -1301,7 +1301,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
   }
 
   /**
-   * Creates Segwit Bech32 Bitcoin address
+   * Creates Segwit Bech32 Qogecoin address
    */
   _nodeToBech32SegwitAddress(hdNode: BIP32Interface): string {
     return bitcoin.payments.p2wpkh({
@@ -1318,7 +1318,7 @@ export class AbstractHDElectrumWallet extends AbstractHDWallet {
   }
 
   /**
-   * Creates Segwit P2SH Bitcoin address
+   * Creates Segwit P2SH Qogecoin address
    */
   _nodeToP2shSegwitAddress(hdNode: BIP32Interface): string {
     const { address } = bitcoin.payments.p2sh({
