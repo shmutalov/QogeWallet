@@ -25,7 +25,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>io.bluewallet.psbt</string>
+				<string>ml.gorynich.psbt</string>
 			</array>
 		</dict>
 		<dict>
@@ -39,7 +39,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>io.bluewallet.psbt.txn</string>
+				<string>ml.gorynich.psbt.txn</string>
 			</array>
 		</dict>
 		<dict>
@@ -53,7 +53,7 @@
 			<string>Owner</string>
 			<key>LSItemContentTypes</key>
 			<array>
-				<string>io.bluewallet.backup</string>
+				<string>ml.gorynich.backup</string>
 			</array>
 		</dict>
 	</array>
@@ -220,7 +220,7 @@
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>io.bluewallet.psbt</string>
+			<string>ml.gorynich.psbt</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -239,7 +239,7 @@
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>io.bluewallet.psbt.txn</string>
+			<string>ml.gorynich.psbt.txn</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -261,7 +261,7 @@
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>io.bluewallet.psbt</string>
+			<string>ml.gorynich.psbt</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -280,7 +280,7 @@
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>io.bluewallet.psbt.txn</string>
+			<string>ml.gorynich.psbt.txn</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
@@ -299,7 +299,7 @@
 			<key>UTTypeIconFiles</key>
 			<array/>
 			<key>UTTypeIdentifier</key>
-			<string>io.bluewallet.backup</string>
+			<string>ml.gorynich.backup</string>
 			<key>UTTypeTagSpecification</key>
 			<dict>
 				<key>public.filename-extension</key>
