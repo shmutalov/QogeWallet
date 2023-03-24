@@ -101,13 +101,6 @@ const SendDetails = () => {
     return initialFee;
   }, [customFee, feePrecalc, networkTransactionFees]);
 
-  useLayoutEffect(() => {
-    if (wallet) {
-      setHeaderRightOptions();
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [colors, wallet, isTransactionReplaceable, balance, addresses, isEditable, isLoading]);
-
   // keyboad effects
   useEffect(() => {
     const _keyboardDidShow = () => {
@@ -329,6 +322,13 @@ const SendDetails = () => {
     setFeePrecalc(newFeePrecalc);
     setFrozenBlance(frozen);
   }, [wallet, networkTransactionFees, utxo, addresses, feeRate, dumb]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  useLayoutEffect(() => {
+    if (wallet) {
+      setHeaderRightOptions();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [colors, wallet, isTransactionReplaceable, balance, addresses, isEditable, isLoading]);
 
   // we need to re-calculate fees if user opens-closes coin control
   useFocusEffect(
