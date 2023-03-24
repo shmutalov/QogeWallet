@@ -109,7 +109,7 @@ describe('import procedure', () => {
   });
 
   it('can import BIP84 with passphrase', async () => {
-    const store = createStore('BlueWallet');
+    const store = createStore('QogeWallet');
     const { promise } = startImport(
       'abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about',
       true,
@@ -369,7 +369,7 @@ describe('import procedure', () => {
   });
 
   it('can import slip39 wallet with password', async () => {
-    const store = createStore('BlueWallet');
+    const store = createStore('QogeWallet');
     // 2-of-3 slip39 wallet
     // crystal lungs academic acid corner infant satisfy spider alcohol laser golden equation fiscal epidemic infant scholar space findings tadpole belong
     // crystal lungs academic agency class payment actress avoid rebound ordinary exchange petition tendency mild mobile spine robin fancy shelter increase

@@ -103,7 +103,7 @@ const About = () => {
     Linking.openURL('https://t.me/bluewallethat');
   };
   const handleOnGithubPress = () => {
-    Linking.openURL('https://github.com/BlueWallet/BlueWallet');
+    Linking.openURL('https://github.com/shmutalov/QogeWallet');
   };
   const handleOnRatePress = () => {
     const options = {

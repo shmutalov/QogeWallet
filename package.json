@@ -1,10 +1,10 @@
 {
-  "name": "bluewallet",
+  "name": "qogewallet",
   "version": "6.4.0",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/BlueWallet/BlueWallet.git"
+    "url": "https://github.com/shmutalov/QogeWallet.git"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",

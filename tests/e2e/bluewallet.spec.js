@@ -21,7 +21,7 @@ beforeAll(async () => {
   await device.launchApp({ delete: true });
 }, 300_000);
 
-describe('BlueWallet UI Tests - no wallets', () => {
+describe('QogeWallet UI Tests - no wallets', () => {
   it('selftest passes', async () => {
     const lockFile = '/tmp/travislock.' + hashIt('t1');
     if (process.env.TRAVIS) {

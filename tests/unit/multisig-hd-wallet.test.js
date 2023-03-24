@@ -1803,7 +1803,7 @@ describe('multisig-wallet (native segwit)', () => {
   it('can sign valid tx if we have more keys than quorum ("Too many signatures" error)', async () => {
     const w = new MultisigHDWallet();
     w.setSecret(
-      '# BlueWallet Multisig setup file\n' +
+      '# QogeWallet Multisig setup file\n' +
         '# this file may contain private information\n' +
         '#\n' +
         'Name: Multisig Vault\n' +
@@ -1863,7 +1863,7 @@ describe('multisig-wallet (native segwit)', () => {
   it('can sign multiple inputs', async () => {
     const w = new MultisigHDWallet();
     w.setSecret(
-      '# BlueWallet Multisig setup file\n' +
+      '# QogeWallet Multisig setup file\n' +
         '# this file may contain private information\n' +
         '#\n' +
         'Name: Multisig Vault\n' +

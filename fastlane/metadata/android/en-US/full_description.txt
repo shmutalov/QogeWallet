@@ -1,7 +1,7 @@
-A Bitcoin wallet that allows you to store, send Bitcoin, receive Bitcoin with focus on security and simplicity.
-On BlueWallet, a bitcoin wallet you own you private keys. A Bitcoin wallet made by Bitcoin users for the community.
+A Qogecoin wallet that allows you to store, send Qogecoin, receive Qogecoin with focus on security and simplicity.
+On QogeWallet, a qogecoin wallet you own you private keys. A Qogecoin wallet made by Bitcoin and Qogecoin users for the community.
 You can instantly transact with anyone in the world and transform the financial system right from your pocket.
-Create for free unlimited number of bitcoin wallets or import your existing one on your Android device. It's simple and fast.
+Create for free unlimited number of qogecoin wallets or import your existing one on your Android device. It's simple and fast.
 _____
 
 Here's what you get:
@@ -33,6 +33,3 @@ Starting from 1 Satoshi. Defined by you, the user
 
 • Watch-only wallets
 Watch-only wallets allow you to keep an eye on your cold storage without touching the hardware.
-
-• Lightning Network
-Lightning wallet with zero-configuration. Unfairly cheap and fast transactions with the best Bitcoin user experience.

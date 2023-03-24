@@ -21,4 +21,4 @@ const BlueAppComponent = () => {
   );
 };
 
-AppRegistry.registerComponent('BlueWallet', () => BlueAppComponent);
+AppRegistry.registerComponent('QogeWallet', () => BlueAppComponent);

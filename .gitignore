@@ -61,7 +61,7 @@ buck-out/
 # Bundle artifact
 *.jsbundle
 
-#BlueWallet
+#QogeWallet
 release-notes.json
 release-notes.txt
 current-branch.json

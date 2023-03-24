@@ -246,7 +246,7 @@ export default class Selftest extends Component {
       //
 
       if (typeof navigator !== 'undefined' && navigator.product === 'ReactNative') {
-        assertStrictEqual(await Linking.canOpenURL('https://github.com/BlueWallet/BlueWallet/'), true, 'Linking can not open https url');
+        assertStrictEqual(await Linking.canOpenURL('https://github.com/shmutalov/QogeWallet/'), true, 'Linking can not open https url');
       } else {
         // skipping RN-specific test'
       }
