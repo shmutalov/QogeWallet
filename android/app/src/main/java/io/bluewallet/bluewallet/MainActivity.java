@@ -1,4 +1,4 @@
-package io.bluewallet.bluewallet;
+package ml.gorynich.qogewallet;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;

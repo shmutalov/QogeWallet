@@ -1400,7 +1400,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet;
 				PRODUCT_NAME = BlueWallet;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTS_MACCATALYST = "$(OVERRIDE_SUPPORTS_MACCATALYST:default=YES)";
@@ -1444,7 +1444,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet;
 				PRODUCT_NAME = BlueWallet;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -1482,7 +1482,7 @@
 				MARKETING_VERSION = 6.4.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet.TodayExtension;
 				PRODUCT_NAME = "BlueWallet - Bitcoin Price";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1520,7 +1520,7 @@
 				);
 				MARKETING_VERSION = 6.4.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet.TodayExtension;
 				PRODUCT_NAME = "BlueWallet - Bitcoin Price";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1553,7 +1553,7 @@
 				MARKETING_VERSION = 6.4.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet.Stickers;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet.Stickers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1584,7 +1584,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MARKETING_VERSION = 6.4.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet.Stickers;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet.Stickers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1623,7 +1623,7 @@
 				MARKETING_VERSION = 6.4.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet.MarketWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet.MarketWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -1667,7 +1667,7 @@
 				);
 				MARKETING_VERSION = 6.4.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet.MarketWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet.MarketWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
@@ -1815,7 +1815,7 @@
 				MARKETING_VERSION = 6.4.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet.watch.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet.watch.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1854,7 +1854,7 @@
 				);
 				MARKETING_VERSION = 6.4.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet.watch.extension;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet.watch.extension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1890,7 +1890,7 @@
 				MARKETING_VERSION = 6.4.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet.watch;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet.watch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1927,7 +1927,7 @@
 				INFOPLIST_FILE = BlueWalletWatch/Info.plist;
 				MARKETING_VERSION = 6.4.0;
 				MTL_FAST_MATH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = io.bluewallet.bluewallet.watch;
+				PRODUCT_BUNDLE_IDENTIFIER = ml.gorynich.qogewallet.watch;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;

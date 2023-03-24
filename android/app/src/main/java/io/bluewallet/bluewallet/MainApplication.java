@@ -1,4 +1,4 @@
-package io.bluewallet.bluewallet;
+package ml.gorynich.qogewallet;
 
 import android.app.Application;
 import android.content.Context;

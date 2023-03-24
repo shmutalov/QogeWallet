@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "io.bluewallet.bluewallet",
+    package = "ml.gorynich.qogewallet",
 )
 
 android_resource(
     name = "res",
-    package = "io.bluewallet.bluewallet",
+    package = "ml.gorynich.qogewallet",
     res = "src/main/res",
 )
 
