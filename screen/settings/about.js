@@ -112,7 +112,7 @@ const About = () => {
       preferredAndroidMarket: AndroidMarket.Google,
       preferInApp: Platform.OS !== 'android',
       openAppStoreIfInAppFails: true,
-      fallbackPlatformURL: 'https://bluewallet.io',
+      fallbackPlatformURL: 'https://qogewallet.gorynich.ml',
     };
     Rate.rate(options, success => {
       if (success) {

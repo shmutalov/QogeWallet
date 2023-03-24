@@ -7,7 +7,7 @@ assignees: ''
 
 ---
 
-## Do you need support? Just email bluewallet@bluewallet.io
+## Do you need support? Just email shmutalov@gmail.com
 
 ## Are you reporting a bug?
 

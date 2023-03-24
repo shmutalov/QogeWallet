@@ -188,7 +188,7 @@ didReceiveNotificationResponse:(UNNotificationResponse *)response
 
 
 -(void)showHelp:(id)sender {
-  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://help.bluewallet.io"] options:@{} completionHandler:nil];
+  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://qogewallet.gorynich.ml/help"] options:@{} completionHandler:nil];
 }
 
 - (BOOL)canPerformAction:(SEL)action withSender:(id)sender {

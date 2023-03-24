@@ -271,7 +271,7 @@ class DeeplinkSchemaMatch {
   }
 
   /**
-   * Extracts server from a deeplink like `bluewallet:setelectrumserver?server=electrum1.bluewallet.io%3A443%3As`
+   * Extracts server from a deeplink like `bluewallet:setelectrumserver?server=qogecoin-electrum.gorynich.ml%3A443%3As`
    * returns FALSE if none found
    *
    * @param url {string}
