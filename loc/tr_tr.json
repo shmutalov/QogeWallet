@@ -257,7 +257,7 @@
     "check_address": "Adresi kontrol et"
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Maks",
     "sats": "sat"
   },

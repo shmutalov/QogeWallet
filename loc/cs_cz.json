@@ -554,7 +554,7 @@
     "tip": "Umožňuje zobrazit, označit, zmrazit nebo vybrat mince pro lepší správu peněženky. Klepnutím na barevné kruhy můžete vybrat více mincí."
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Max",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

@@ -341,7 +341,7 @@
     "use_coins": "Використовувати Монети"
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Макс",
     "sat_vbyte": "sat/vByte"
   },

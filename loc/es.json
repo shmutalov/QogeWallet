@@ -551,7 +551,7 @@
     "tip": "Te permite ver, etiquetar, congelar o seleccionar monedas para mejorar la organización de las carteras."
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Máx",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

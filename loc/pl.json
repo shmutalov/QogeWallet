@@ -554,7 +554,7 @@
     "tip": "Dzięki tej funkcji możesz lepiej zarządzać monetami poprzez ich wybieranie, zamrażanie lub sprawdzanie i nadawanie im etykiet. Możesz zaznaczyć kilka monet naraz wybierając kolorowe kółka."
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Max",
     "sat_vbyte": "sat/vBajt",
     "sats": "satoshi"

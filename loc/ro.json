@@ -515,7 +515,7 @@
     "tip": "Această funcționalitate îți permite să vezi, etichetezi, îngheți sau selectezi monedele pentru o administrare îmbunătățită a portofelului. Poți selecta monede multiple apăsînd cercurile colorate. "
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Max",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

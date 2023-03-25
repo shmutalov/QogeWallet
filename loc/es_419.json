@@ -554,7 +554,7 @@
     "tip": "Esta función te permite ver, etiquetar, congelar o seleccionar monedas para una mejor gestión de la cartera. Puedes seleccionar varias monedas tocando los círculos de colores."
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Máx",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

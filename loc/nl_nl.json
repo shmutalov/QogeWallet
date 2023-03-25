@@ -534,7 +534,7 @@
     "tip": "Hiermee kunt u coins zien, labelen, bevriezen of selecteren voor verbeterd walletbeheer."
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "MAX",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

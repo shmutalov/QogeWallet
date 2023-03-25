@@ -379,7 +379,7 @@
     "add_wallet_name": "nom du portefeuille",
     "add_wallet_type": "type",
     "balance": "Solde",
-    "clipboard_bitcoin": "Vous avez une adresse bitcoin dans votre presse-papier. Voulez vous l'utiliser pour une transaction ?",
+    "clipboard_bitcoin": "Vous avez une adresse qogecoin dans votre presse-papier. Voulez vous l'utiliser pour une transaction ?",
     "clipboard_lightning": "Vous avez une facture Ligthning dans votre presse-papier. Voulez vous l'utiliser pour une transaction ?",
     "details_address": "Adresse",
     "details_advanced": "Avancé",
@@ -549,7 +549,7 @@
     "tip": "Permet de voir, étiqueter, bloquer ou sélectionner des UTXOs pour une meilleure gestion du portefeuille. Vous pouvez sélectionner plusieurs UTXOs en appuyant sur les cercles colorés."
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Max",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

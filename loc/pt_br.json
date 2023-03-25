@@ -554,7 +554,7 @@
     "tip": "Permite que você veja, marque, congele ou selecione moedas para gerenciar melhor sua carteira."
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Máx.",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

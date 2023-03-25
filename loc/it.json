@@ -455,7 +455,7 @@
     "freezeLabel_un": "Scongela"
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Max",
     "sat_vbyte": "sat/vByte",
     "sats": "sat"

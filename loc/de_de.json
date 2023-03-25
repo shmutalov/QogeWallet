@@ -98,7 +98,7 @@
     "title": "Glaubhafte Täuschung"
   },
   "pleasebackup": {
-    "ask": "Hast du die Wiederherstellungs-Phrase deines Wallets gesichert? Ohne Sie kannst du nicht mehr auf deine bitcoin zugreifen und sie wären für immer verloren, sollte dein Gerät verloren oder kaputt gehen.",
+    "ask": "Hast du die Wiederherstellungs-Phrase deines Wallets gesichert? Ohne Sie kannst du nicht mehr auf deine qogecoin zugreifen und sie wären für immer verloren, sollte dein Gerät verloren oder kaputt gehen.",
     "ask_no": "Nein, habe ich nicht.",
     "ask_yes": "Ja, habe ich.",
     "ok": "Ok, ich habe sie notiert.",
@@ -551,7 +551,7 @@
     "tip": "Wallet-Verwaltung zum Anzeigen, Beschriften, Einfrieren oder Auswählen von Münzen. Zur Mehrfachselektion auf die Farbkreise tippen."
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "MAX",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

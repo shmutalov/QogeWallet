@@ -549,7 +549,7 @@
     "tip": "Denne funksjonen lar deg se, merke, fryse eller velge mynter for forbedret lommebokadministrasjon. Du kan velge flere mynter ved å trykke på de fargede sirklene."
   },
   "units": {
-    "BTC": "QOGE",
+    "QOGE": "QOGE",
     "MAX": "Maks",
     "sat_vbyte": "sat/vByte",
     "sats": "sats"

@@ -143,7 +143,7 @@
     "permission_storage_denied_message": "A QogeWallet não conseguiu gravar este ficheiro. Por favor aceda às definições do seu dispositivo e habilite as permissões de armazenamento.",
     "permission_storage_title": "Permissão de acesso ao armazenamento",
     "psbt_clipboard": "Copiar para área de transferência",
-    "psbt_this_is_psbt": "Esta é uma transação bitcoin parcialmente assinada (PSBT). Conclua a assinatura com a sua carteira de hardware.",
+    "psbt_this_is_psbt": "Esta é uma transação qogecoin parcialmente assinada (PSBT). Conclua a assinatura com a sua carteira de hardware.",
     "psbt_tx_export": "Exportar para ficheiro",
     "no_tx_signing_in_progress": "Nenhuma assinatura de transação em progresso.",
     "outdated_rate": "A taxa foi atualizada pela última vez em: {date}",

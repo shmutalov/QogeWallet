@@ -346,7 +346,7 @@ class DeeplinkSchemaMatch {
   }
 
   static isBitcoinAddress(address) {
-    address = address.replace('://', ':').replace('qogecoin:', '').replace('QOGECOIN:', '').replace('bitcoin=', '').split('?')[0];
+    address = address.replace('://', ':').replace('qogecoin:', '').replace('QOGECOIN:', '').replace('qogecoin=', '').split('?')[0];
     let isValidBitcoinAddress = false;
     try {
       bitcoin.address.toOutputScript(address, QogecoinNetworks.mainnet);
@@ -379,7 +379,7 @@ class DeeplinkSchemaMatch {
 
   static isBothBitcoinAndLightning(url) {
     if (url.includes('lightning') && (url.includes('qogecoin') || url.includes('QOGECOIN'))) {
-      const txInfo = url.split(/(qogecoin:\/\/|QOGECOIN:\/\/|qogecoin:|QOGECOIN:|lightning:|lightning=|bitcoin=)+/);
+      const txInfo = url.split(/(qogecoin:\/\/|QOGECOIN:\/\/|qogecoin:|QOGECOIN:|lightning:|lightning=|qogecoin=)+/);
       let bitcoin;
       let lndInvoice;
       for (const [index, value] of txInfo.entries()) {
