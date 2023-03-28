@@ -55,7 +55,7 @@ const UnlockWith = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(async () => {
+  const checkStorage = async () => {
     if (unlockOnComponentMount) {
       const storageIsEncrypted = await isStorageEncrypted();
       setIsStorageEncryptedEnabled(storageIsEncrypted);
@@ -63,6 +63,11 @@ const UnlockWith = () => {
         unlockWithKey();
       } else if (typeof biometricType === 'string') unlockWithBiometrics();
     }
+  }
+
+  useEffect(() => {
+    checkStorage();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const successfullyAuthenticated = () => {
