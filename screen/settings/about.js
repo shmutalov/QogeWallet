@@ -33,10 +33,10 @@ const About = () => {
     center: {
       justifyContent: 'center',
       alignItems: 'center',
-      marginTop: 54,
+      marginTop: 16,
     },
     logo: {
-      width: 102,
+      width: 124,
       height: 124,
     },
     textFree: {
