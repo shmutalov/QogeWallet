@@ -420,7 +420,7 @@ class DeeplinkSchemaMatch {
       replacedUri = replacedUri.replace(replaceMe, 'qogecoin:');
     }
 
-    return bip21.decode(replacedUri);
+    return bip21.decode(replacedUri, 'qogecoin');
   }
 
   static bip21encode() {
@@ -433,7 +433,7 @@ class DeeplinkSchemaMatch {
         delete argument.amount;
       }
     }
-    return bip21.encode.apply(bip21, argumentsArray);
+    return bip21.encode.apply(bip21, argumentsArray.push('qogecoin'));
   }
 
   static decodeBitcoinUri(uri) {
